@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxts6lcwtiall"
-path="res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-b8751fa88b5ec415367929740f146b14.ctex"
+uid="uid://dobvt7t22b7h4"
+path="res://.godot/imported/Jump NURI.png-1725ee4c11ba6c8f0a863bc6475ea0f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/tilemap/Checkpoint (Flag Idle)(64x64).png"
-dest_files=["res://.godot/imported/Checkpoint (Flag Idle)(64x64).png-b8751fa88b5ec415367929740f146b14.ctex"]
+source_file="res://assets/images/player/Jump NURI.png"
+dest_files=["res://.godot/imported/Jump NURI.png-1725ee4c11ba6c8f0a863bc6475ea0f5.ctex"]
 
 [params]
 
