@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://2em6cj6agm5g"]
+[gd_scene load_steps=10 format=4 uid="uid://2em6cj6agm5g"]
 
+[ext_resource type="Script" uid="uid://c83tfo8f1m7b6" path="res://scripts/level_1.gd" id="1_1seuy"]
 [ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="2_4tcl0"]
@@ -171,6 +172,7 @@ sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
 
 [node name="level1" type="Node2D"]
+script = ExtResource("1_1seuy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1599.0

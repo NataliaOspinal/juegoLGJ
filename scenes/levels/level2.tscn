@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://bpulpkrpkgocj"]
+[gd_scene load_steps=9 format=4 uid="uid://bpulpkrpkgocj"]
 
 [ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_d5djh"]
+[ext_resource type="Script" uid="uid://bdwpt4l5bbdj8" path="res://scripts/level_2.gd" id="1_ok6xr"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_nos0u"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="3_71baw"]
-[ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dj4wq"]
+[ext_resource type="PackedScene" path="res://scenes/killzone.tscn" id="5_dj4wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("2_nos0u")
@@ -170,6 +171,7 @@ sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
 
 [node name="level2" type="Node2D"]
+script = ExtResource("1_ok6xr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1599.0
