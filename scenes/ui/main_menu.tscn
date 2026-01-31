@@ -86,7 +86,7 @@ theme_override_font_sizes/font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxTexture_1g8jr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_m1kxf")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x2yvf")
-text = "INICIAR"
+text = "Iniciar"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
 layout_mode = 2
