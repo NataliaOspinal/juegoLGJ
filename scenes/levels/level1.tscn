@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://2em6cj6agm5g"]
+[gd_scene load_steps=9 format=4 uid="uid://2em6cj6agm5g"]
 
 [ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bvtq83vbrxx6f" path="res://scenes/snail.tscn" id="4_bfxgj"]
+[ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dywbp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("1_x6ivy")
@@ -167,6 +168,8 @@ texture = ExtResource("1_x6ivy")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
+
 [node name="level1" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -184,6 +187,14 @@ tile_set = SubResource("TileSet_dd0lh")
 [node name="Player" parent="." instance=ExtResource("2_4tcl0")]
 position = Vector2(73, 796)
 
+[node name="RemoteTransform2D" parent="Player" index="5"]
+remote_path = NodePath("../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+limit_bottom = 900
+limit_smoothed = true
+
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Snails" parent="Enemies" instance=ExtResource("4_bfxgj")]
@@ -191,3 +202,11 @@ position = Vector2(1245, 714)
 
 [node name="Snails2" parent="Enemies" instance=ExtResource("4_bfxgj")]
 position = Vector2(1018, 745)
+
+[node name="Killzone" parent="." instance=ExtResource("5_dywbp")]
+position = Vector2(293, 947)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_dywbp")
+
+[editable path="Player"]
