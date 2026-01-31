@@ -2,27 +2,27 @@
 
 [ext_resource type="Script" uid="uid://b2t8e6fhcsgko" path="res://scripts/ui/game_over.gd" id="1_x6o8e"]
 [ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_vfrx6"]
-[ext_resource type="Texture2D" uid="uid://cwn106hbwosqj" path="res://assets/ui/btn_prueba.png" id="3_o6b8n"]
+[ext_resource type="Texture2D" uid="uid://hph4bfrx7hd8" path="res://assets/ui/btn_gris.png" id="3_x6o8e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4583b"]
-texture = ExtResource("3_o6b8n")
+texture = ExtResource("3_x6o8e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b6337"]
-texture = ExtResource("3_o6b8n")
+texture = ExtResource("3_x6o8e")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6ix2"]
-texture = ExtResource("3_o6b8n")
+texture = ExtResource("3_x6o8e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trpi5"]
-texture = ExtResource("3_o6b8n")
+texture = ExtResource("3_x6o8e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mouq"]
-texture = ExtResource("3_o6b8n")
+texture = ExtResource("3_x6o8e")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6x8a"]
-texture = ExtResource("3_o6b8n")
+texture = ExtResource("3_x6o8e")
 
 [node name="GameOver" type="Control"]
 layout_mode = 3

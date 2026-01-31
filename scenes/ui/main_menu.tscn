@@ -2,54 +2,54 @@
 
 [ext_resource type="Script" uid="uid://cvrmeq8s2wbnu" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_1g8jr"]
-[ext_resource type="Texture2D" uid="uid://cwn106hbwosqj" path="res://assets/ui/btn_prueba.png" id="3_m1kxf"]
+[ext_resource type="Texture2D" uid="uid://hph4bfrx7hd8" path="res://assets/ui/btn_gris.png" id="3_1g8jr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1kxf"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2yvf"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhagc"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btxxm"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wb0q5"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q85j6"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8g5eo"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7suek"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otr3d"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ekit"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4uci"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_877pj"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayp64"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2j7i"]
-texture = ExtResource("3_m1kxf")
+texture = ExtResource("3_1g8jr")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
