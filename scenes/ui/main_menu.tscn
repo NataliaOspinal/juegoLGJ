@@ -1,18 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://vhaooiul6kls"]
+[gd_scene load_steps=19 format=3 uid="uid://vhaooiul6kls"]
 
 [ext_resource type="Script" uid="uid://cvrmeq8s2wbnu" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
+[ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://cwn106hbwosqj" path="res://assets/ui/btn_prueba.png" id="3_m1kxf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87aya"]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1kxf"]
+texture = ExtResource("3_m1kxf")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2yvf"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhagc"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btxxm"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wb0q5"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q85j6"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8g5eo"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7suek"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otr3d"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ekit"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4uci"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_877pj"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayp64"]
+texture = ExtResource("3_m1kxf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2j7i"]
+texture = ExtResource("3_m1kxf")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -30,47 +67,65 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -219.875
-offset_top = -349.875
-offset_right = 219.875
-offset_bottom = 349.875
+offset_left = -292.0
+offset_top = -445.0
+offset_right = 278.0
+offset_bottom = 443.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 10
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_87aya")
-text = "Iniciar"
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0.7360942, 3.4461616e-05, 0.5513051, 1)
+theme_override_colors/font_hover_color = Color(0.99999994, 0.8210198, 0.15146911, 1)
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_1g8jr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m1kxf")
+theme_override_styles/hover = SubResource("StyleBoxTexture_x2yvf")
+text = "INICIAR"
 
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_87aya")
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhagc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_btxxm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_wb0q5")
 text = "Tutorial"
 
 [node name="Story" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_87aya")
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_q85j6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8g5eo")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7suek")
 text = "Historia"
 
 [node name="Credits" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_87aya")
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_otr3d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ekit")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n4uci")
 text = "Créditos"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_87aya")
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_877pj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ayp64")
+theme_override_styles/hover = SubResource("StyleBoxTexture_y2j7i")
 text = "Salir"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
