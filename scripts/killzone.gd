@@ -1,29 +1,56 @@
 extends Area2D
 
-
 @onready var timer: Timer = $Timer
+@export var es_mortal : bool = false 
 
 func _on_body_entered(body):
-	# --- FILTRO DE SEGURIDAD ---
-	# Preguntamos: "¿El cuerpo que entró NO se llama Player?"
-	# Si es un caracol, una caja o cualquier otra cosa, detenemos la función aquí.
+	# Solo nos importa si es el Jugador
 	if body.name != "Player":
 		return
 	
-	# Si pasamos el filtro, significa que SÍ es el Player.
-	# Protección de doble golpe (si ya estamos muriendo, no morir de nuevo)
+	# Si el timer corre, no hacemos nada (invencible)
 	if not timer.is_stopped():
 		return
+
+	if body.has_method("recibir_daño"):
+		body.recibir_daño() 
 		
-	print("Moriste")
-	Global.vidas -= 1
+	if es_mortal:
+		print("Caída al vacío - Game Over instantáneo")
+		
+		# Forzamos las vidas a 0.
+		Global.vidas = 0 
+		
+		# Ponemos cámara lenta para mas drama
+		Engine.time_scale = 0.5 
+		
+		# Iniciamos el timer para dar tiempo a ver las vidas grises antes de reiniciar
+		timer.start()
+		return # Terminamos aquí	
+		
+	# Lógica de vidas y reinicio
+	if es_mortal:
+		Global.vidas = 0
+		timer.start()
+	else:
+		Global.vidas -= 1
+		timer.start()
+		
 	Engine.time_scale = 0.5
-	timer.start()
 
 func _on_timer_timeout() -> void:
-	Engine.time_scale = 1
+	Engine.time_scale = 1.0
+	
+	# Verificamos estado
 	if Global.vidas > 0:
-		get_tree().reload_current_scene()
+		# Si aún quedan vidas, el jugador sigue jugando ahí mismo
+		pass 
 	else:
-		Global.vidas = 3
-		get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
+		# Si las vidas son 0 (porque caímos o porque nos mató un enemigo)
+		print("GAME OVER - Reiniciando...")
+		
+		# Restablecemos las vidas para el próximo intento
+		Global.vidas = 3 
+		
+		# Reiniciamos el nivel
+		get_tree().reload_current_scene()

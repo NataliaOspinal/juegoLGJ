@@ -169,7 +169,7 @@ sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
 
-[node name="level1" type="Node2D"]
+[node name="level2" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1599.0
