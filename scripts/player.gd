@@ -2,6 +2,12 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var jump_sound: AudioStreamPlayer2D = $JumpSound
 
+@onready var footstep_sound: AudioStreamPlayer2D = $FootstepSound
+@export var footstep_sfx: Array[AudioStream] = []
+@export_range(0.05, 1.0, 0.01) var footstep_interval := 0.22
+var footstep_timer := 0.0
+
+
 const SPEED = 300
 const JUMP_VELOCITY = -850 #Proyecto -> config proy -> general -> busca gravity para ajustar
 
@@ -9,6 +15,7 @@ const JUMP_VELOCITY = -850 #Proyecto -> config proy -> general -> busca gravity 
 var herido : bool = false
 
 func _ready() -> void:
+	randomize()
 	# Verificamos si venimos de usar la máscara
 	if Global.viene_de_mascara == true:
 		global_position = Global.posicion_jugador
@@ -48,6 +55,18 @@ func _process(delta: float) -> void:
 	
 	move_and_slide()
 	
+	var is_moving: bool = abs(velocity.x) > 20.0
+	var can_step: bool = is_on_floor() and is_moving and not herido
+
+	if can_step:
+		footstep_timer -= delta
+	if footstep_timer <= 0.0:
+		_play_footstep()
+		footstep_timer = footstep_interval
+	else:
+		# resetea para que al volver a correr no dispare un paso instantáneo raro
+		footstep_timer = 0.0
+	
 	if direction == 1.0:
 		animated_sprite_2d.flip_h = false
 	elif direction == -1.0:
@@ -75,5 +94,12 @@ func recibir_daño():
 	velocity.y = -300
 	await get_tree().create_timer(0.6).timeout
 	herido = false
-	
-	
+
+func _play_footstep() -> void:
+	if footstep_sfx.is_empty():
+		return
+
+	footstep_sound.stream = footstep_sfx[randi() % footstep_sfx.size()]
+	footstep_sound.pitch_scale = randf_range(0.96, 1.04)
+	footstep_sound.volume_db = randf_range(-9.0, -6.0)
+	footstep_sound.play()
