@@ -41,18 +41,14 @@ func _on_body_entered(body):
 	Engine.time_scale = 0.5
 
 func _on_timer_timeout() -> void:
+	# Quitar la cámara lenta
 	Engine.time_scale = 1.0
 	
 	# Verificamos estado
 	if Global.vidas > 0:
-		# Si aún quedan vidas, el jugador sigue jugando ahí mismo
 		pass 
 	else:
-		# Si las vidas son 0 (porque caímos o porque nos mató un enemigo)
-		print("GAME OVER - Reiniciando...")
+		print("GAME OVER - Cambiando de escena...")
 		
-		# Restablecemos las vidas para el próximo intento
-		Global.vidas = 3 
-		
-		# Reiniciamos el nivel
-		get_tree().reload_current_scene()
+		# CAMBIO PRINCIPAL: Vamos a la escena de Game Over
+		get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
