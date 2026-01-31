@@ -182,4 +182,8 @@ tile_map_data = PackedByteArray("AAAAABoAAAASAAQAAAABABoAAAASAAQAAAACABoAAAASAAQ
 tile_set = SubResource("TileSet_niitk")
 
 [node name="Player" parent="." instance=ExtResource("3_71baw")]
+<<<<<<< Updated upstream
 position = Vector2(72, 783)
+=======
+position = Vector2(63, 796)
+>>>>>>> Stashed changes
