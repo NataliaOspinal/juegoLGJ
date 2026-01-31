@@ -1,119 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://bef1wyti0ynmm"]
+[gd_scene load_steps=2 format=3 uid="uid://bef1wyti0ynmm"]
 
-[ext_resource type="Script" uid="uid://cic74b0pwyvag" path="res://scripts/snail.gd" id="1_j2mit"]
-[ext_resource type="Texture2D" uid="uid://bymj0wbd4vkhj" path="res://assets/images/Snails/Walk (38x24).png" id="2_mw1oh"]
-[ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="3_yemdv"]
+[ext_resource type="Script" uid="uid://bq042by7jbkea" path="res://scripts/killzone.gd" id="1_xlapc"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hlx46"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(0, 0, 38, 24)
+[node name="Killzone" type="Area2D"]
+script = ExtResource("1_xlapc")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1yqjy"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(38, 0, 38, 24)
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pe0jf"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(76, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4g8al"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(114, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nondc"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(152, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_liy6q"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(190, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i16ft"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(228, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0chwd"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(266, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jixv"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(304, 0, 38, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s38cv"]
-atlas = ExtResource("2_mw1oh")
-region = Rect2(342, 0, 38, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_myo7b"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hlx46")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1yqjy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pe0jf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4g8al")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nondc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_liy6q")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i16ft")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0chwd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5jixv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s38cv")
-}],
-"loop": true,
-"name": &"running",
-"speed": 20.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbdcd"]
-size = Vector2(34.5, 13.5)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_e88or"]
-
-[node name="Snails" type="Node2D"]
-scale = Vector2(2, 2)
-script = ExtResource("1_j2mit")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_myo7b")
-animation = &"running"
-autoplay = "running"
-frame = 5
-frame_progress = 0.020835869
-
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, 3.5)
-target_position = Vector2(-22, 0.5)
-
-[node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0.5, 3.5)
-target_position = Vector2(24, 0)
-
-[node name="Killzone" parent="." instance=ExtResource("3_yemdv")]
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1.25, 4.25)
-shape = SubResource("RectangleShape2D_jbdcd")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(5.5, 0)
-shape = SubResource("CircleShape2D_e88or")
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
