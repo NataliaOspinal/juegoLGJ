@@ -16,7 +16,6 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 script = ExtResource("1_oap8i")
 text_node = NodePath("MarginContainer/RichTextLabel")
-credits_time = 25.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
