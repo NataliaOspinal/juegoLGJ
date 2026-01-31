@@ -29,15 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch_mode = 6
 
-[node name="Fade" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="Glitch" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -46,6 +37,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.36308706, 0.7993371, 0.77237034, 0.003921569)
+
+[node name="Fade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="TextBox" type="Panel" parent="."]
 layout_mode = 1
