@@ -5,6 +5,9 @@ extends CharacterBody2D
 const SPEED = 300
 const JUMP_VELOCITY = -850 #Proyecto -> config proy -> general -> busca gravity para ajustar
 
+# Variable nueva para bloquear controles/animación
+var herido : bool = false
+
 func _ready() -> void:
 	# Verificamos si venimos de usar la máscara
 	if Global.viene_de_mascara == true:
@@ -13,6 +16,13 @@ func _ready() -> void:
 		Global.viene_de_mascara = false
 
 func _process(delta: float) -> void:
+	if herido:
+		# Reproducir animación de dolor y no hacer nada más
+		animated_sprite_2d.animation = "dying"
+		velocity += get_gravity() * delta
+		move_and_slide()
+		return
+		
 	# Agregar animacion
 	if velocity.x > 1 or velocity.x < -1:
 		animated_sprite_2d.animation = "running"
@@ -59,6 +69,11 @@ func _process(delta: float) -> void:
 		else:
 			get_tree().change_scene_to_file(ruta_nivel1)
 		
-	
+func recibir_daño():
+	herido = true
+	animated_sprite_2d.animation = "dying" 
+	velocity.y = -300
+	await get_tree().create_timer(0.6).timeout
+	herido = false
 	
 	

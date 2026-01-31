@@ -194,7 +194,7 @@ zoom = Vector2(2, 2)
 limit_bottom = 900
 limit_smoothed = true
 
-[node name="Bichitos" type="Node2D" parent="."]
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Killzone" parent="." instance=ExtResource("5_dj4wq")]
 position = Vector2(293, 947)

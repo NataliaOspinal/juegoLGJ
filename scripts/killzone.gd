@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var timer: Timer = $Timer
+@export var es_mortal : bool = false 
 
 # Interruptor para diferenciar Huecos de Enemigos
 # Si es TRUE (activado), te mata y reinicia el nivel.
@@ -8,50 +9,53 @@ extends Area2D
 @export var es_mortal : bool = false 
 
 func _on_body_entered(body):
-	# Filtro para que solo afecte al Jugador
+	# Solo nos importa si es el Jugador
 	if body.name != "Player":
 		return
 	
-	# Si ya estamos "heridos" (timer corriendo), ignorar golpes (invencibilidad temporal)
+	# Si el timer corre, no hacemos nada (invencible)
 	if not timer.is_stopped():
 		return
+
+	if body.has_method("recibir_daño"):
+		body.recibir_daño() 
 		
-	# --- COMPORTAMIENTO 1: CAÍDA AL VACÍO (Muerte Inmediata) ---
 	if es_mortal:
-		print("Caíste al vacío - Reiniciando nivel")
+		print("Caída al vacío - Game Over instantáneo")
+		
+		# Forzamos las vidas a 0.
 		Global.vidas = 0 
 		
-		verificar_muerte() # Decidimos si reiniciar o Game Over
-		return # Terminamos aquí, no hacemos nada más
-
-	# Enemigo normal ---
-	print("Golpeado por enemigo - Vidas restantes: ", Global.vidas - 1)
-	Global.vidas -= 1
-	
-	# Efecto de impacto (Cámara lenta)
-	Engine.time_scale = 0.5
-	
-	# Verificamos si este golpe nos mató
-	if Global.vidas <= 0:
-		# Si llegamos a 0, reiniciamos
-		verificar_muerte()
-	else:
-		# Volver a velocidad normal, no se reinicia la escena
+		# Ponemos cámara lenta para mas drama
+		Engine.time_scale = 0.5 
+		
+		# Iniciamos el timer para dar tiempo a ver las vidas grises antes de reiniciar
 		timer.start()
+		return # Terminamos aquí	
+		
+	# Lógica de vidas y reinicio
+	if es_mortal:
+		Global.vidas = 0
+		timer.start()
+	else:
+		Global.vidas -= 1
+		timer.start()
+		
+	Engine.time_scale = 0.5
 
 func _on_timer_timeout() -> void:
-	# Solo para resetear del estado de cámara lenta
 	Engine.time_scale = 1.0
-
-# Función auxiliar para manejar el reinicio
-func verificar_muerte():
-	Engine.time_scale = 1.0 # Asegurar velocidad normal antes de cambiar
+	
+	# Verificamos estado
 	if Global.vidas > 0:
-		call_deferred("reiniciar_nivel")
+		# Si aún quedan vidas, el jugador sigue jugando ahí mismo
+		pass 
 	else:
-		print("GAME OVER TOTAL")
-		Global.vidas = 3
-		call_deferred("reiniciar_nivel")
-
-func reiniciar_nivel():
-	get_tree().reload_current_scene()
+		# Si las vidas son 0 (porque caímos o porque nos mató un enemigo)
+		print("GAME OVER - Reiniciando...")
+		
+		# Restablecemos las vidas para el próximo intento
+		Global.vidas = 3 
+		
+		# Reiniciamos el nivel
+		get_tree().reload_current_scene()
