@@ -4,9 +4,6 @@ extends Area2D
 @export var es_mortal : bool = false 
 
 # Interruptor para diferenciar Huecos de Enemigos
-# Si es TRUE (activado), te mata y reinicia el nivel.
-# Si es FALSE (desactivado), solo te quita vida y sigues jugando.
-@export var es_mortal : bool = false 
 
 func _on_body_entered(body):
 	# Solo nos importa si es el Jugador
