@@ -1,0 +1,75 @@
+[gd_scene load_steps=10 format=3 uid="uid://byd6lyf3a38q3"]
+
+[ext_resource type="Script" uid="uid://b2t8e6fhcsgko" path="res://scripts/ui/game_over.gd" id="1_x6o8e"]
+[ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_vfrx6"]
+[ext_resource type="Texture2D" uid="uid://cwn106hbwosqj" path="res://assets/ui/btn_prueba.png" id="3_o6b8n"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4583b"]
+texture = ExtResource("3_o6b8n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b6337"]
+texture = ExtResource("3_o6b8n")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6ix2"]
+texture = ExtResource("3_o6b8n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trpi5"]
+texture = ExtResource("3_o6b8n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0mouq"]
+texture = ExtResource("3_o6b8n")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e6x8a"]
+texture = ExtResource("3_o6b8n")
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x6o8e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -160.0
+offset_right = 304.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Retry" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0.7360942, 3.4461616e-05, 0.5513051, 1)
+theme_override_colors/font_hover_color = Color(0.99999994, 0.8210198, 0.15146911, 1)
+theme_override_fonts/font = ExtResource("2_vfrx6")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_4583b")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_b6337")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r6ix2")
+text = "Reiniciar"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_vfrx6")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxTexture_trpi5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_0mouq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_e6x8a")
+text = "Salir"
+
+[connection signal="pressed" from="VBoxContainer/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
