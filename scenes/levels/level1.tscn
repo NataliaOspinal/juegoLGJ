@@ -1,212 +1,120 @@
-[gd_scene load_steps=9 format=4 uid="uid://2em6cj6agm5g"]
+[gd_scene load_steps=17 format=3 uid="uid://2em6cj6agm5g"]
 
-[ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_dd0lh"]
-[ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="1_x6ivy"]
-[ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="2_4tcl0"]
-[ext_resource type="PackedScene" uid="uid://bvtq83vbrxx6f" path="res://scenes/snail.tscn" id="4_bfxgj"]
+[ext_resource type="Script" uid="uid://cic74b0pwyvag" path="res://scripts/snail.gd" id="1_dd0lh"]
+[ext_resource type="Texture2D" uid="uid://bymj0wbd4vkhj" path="res://assets/images/Snails/Walk (38x24).png" id="2_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dywbp"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
-texture = ExtResource("1_x6ivy")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-6:0/0 = 0
-6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:0/0 = 0
-7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:0/0 = 0
-8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:0/0 = 0
-10:0/0 = 0
-12:0/0 = 0
-12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-13:0/0 = 0
-13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-14:0/0 = 0
-14:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-15:0/0 = 0
-15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-17:0/0 = 0
-18:0/0 = 0
-19:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-6:1/0 = 0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-7:1/0 = 0
-7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-8:1/0 = 0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-9:1/0 = 0
-10:1/0 = 0
-12:1/0 = 0
-13:1/0 = 0
-14:1/0 = 0
-15:1/0 = 0
-15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-17:1/0 = 0
-18:1/0 = 0
-19:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-8:2/0 = 0
-13:2/0 = 0
-14:2/0 = 0
-15:2/0 = 0
-17:2/0 = 0
-18:2/0 = 0
-19:2/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-8:4/0 = 0
-9:4/0 = 0
-10:4/0 = 0
-12:4/0 = 0
-13:4/0 = 0
-14:4/0 = 0
-15:4/0 = 0
-17:4/0 = 0
-18:4/0 = 0
-19:4/0 = 0
-20:4/0 = 0
-21:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-8:5/0 = 0
-9:5/0 = 0
-10:5/0 = 0
-12:5/0 = 0
-13:5/0 = 0
-14:5/0 = 0
-15:5/0 = 0
-17:5/0 = 0
-18:5/0 = 0
-19:5/0 = 0
-20:5/0 = 0
-21:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-8:6/0 = 0
-13:6/0 = 0
-14:6/0 = 0
-15:6/0 = 0
-17:6/0 = 0
-18:6/0 = 0
-19:6/0 = 0
-0:8/0 = 0
-1:8/0 = 0
-2:8/0 = 0
-3:8/0 = 0
-4:8/0 = 0
-6:8/0 = 0
-7:8/0 = 0
-8:8/0 = 0
-9:8/0 = 0
-10:8/0 = 0
-12:8/0 = 0
-13:8/0 = 0
-14:8/0 = 0
-15:8/0 = 0
-17:8/0 = 0
-18:8/0 = 0
-19:8/0 = 0
-20:8/0 = 0
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-3:9/0 = 0
-4:9/0 = 0
-6:9/0 = 0
-7:9/0 = 0
-8:9/0 = 0
-9:9/0 = 0
-10:9/0 = 0
-12:9/0 = 0
-13:9/0 = 0
-14:9/0 = 0
-15:9/0 = 0
-17:9/0 = 0
-18:9/0 = 0
-19:9/0 = 0
-20:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-13:10/0 = 0
-14:10/0 = 0
-15:10/0 = 0
-18:10/0 = 0
-19:10/0 = 0
-20:10/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_dd0lh"]
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4tcl0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlx46"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(0, 0, 38, 24)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yqjy"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(38, 0, 38, 24)
 
-[node name="level1" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pe0jf"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(76, 0, 38, 24)
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1599.0
-offset_bottom = 900.0
-texture = ExtResource("1_dd0lh")
-stretch_mode = 1
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g8al"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(114, 0, 38, 24)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-position = Vector2(33, 130)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nondc"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(152, 0, 38, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_liy6q"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(190, 0, 38, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i16ft"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(228, 0, 38, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0chwd"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(266, 0, 38, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jixv"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(304, 0, 38, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s38cv"]
+atlas = ExtResource("2_bfxgj")
+region = Rect2(342, 0, 38, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myo7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlx46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yqjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pe0jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g8al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nondc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_liy6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i16ft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0chwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jixv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s38cv")
+}],
+"loop": true,
+"name": &"running",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbdcd"]
+size = Vector2(34.5, 13.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e88or"]
+
+[node name="Snails" type="Node2D"]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD//xYAAAAHAAAAAAD//xcAAAAHAAEAAAAAABYAAAAHAAAAAAAAABcAAAAHAAEAAAABABYAAAAHAAAAAAABABcAAAAHAAEAAAACABYAAAAHAAAAAAACABcAAAAHAAEAAAADABYAAAAIAAAAAAADABcAAAAIAAEAAAAFABUAAAAPAAAAAAAFABYAAAAPAAEAAAAFABcAAAAPAAEAAAAIABMAAAAMAAAAAAAJABMAAAANAAAAAAAKABMAAAANAAAAAAALABMAAAAOAAAAAAAOABUAAAAPAAAAAAAOABYAAAAPAAEAAAASABQAAAAMAAAAAAATABQAAAANAAAAAAAUABQAAAAOAAAAAAAOABcAAAAPAAEAAAAFABgAAAAPAAEAAAAOABgAAAAPAAEAAAD//xgAAAAHAAIAAAAAABgAAAAHAAIAAAABABgAAAAHAAIAAAACABgAAAAHAAIAAAADABgAAAAIAAIAAAD+/xgAAAAGAAIAAAD+/xcAAAAGAAEAAAD+/xYAAAAGAAAAAAAYABMAAAAPAAAAAAAYABQAAAAPAAEAAAAYABUAAAAPAAEAAAAYABYAAAAPAAEAAAAYABcAAAAPAAEAAAAYABgAAAAPAAEAAAAZABQAAAAMAAAAAAAaABQAAAANAAAAAAAbABQAAAANAAAAAAAcABQAAAANAAAAAAAdABQAAAANAAAAAAAeABQAAAANAAAAAAAfABQAAAAOAAAAAAAgABMAAAAPAAAAAAAgABQAAAAPAAEAAAAgABUAAAAPAAEAAAAgABYAAAAPAAEAAAAgABcAAAAPAAEAAAAgABgAAAAPAAEAAAAhABIAAAAPAAAAAAAhABMAAAAPAAEAAAAhABQAAAAPAAEAAAAhABUAAAAPAAEAAAAhABYAAAAPAAEAAAAhABcAAAAPAAEAAAAhABgAAAAPAAEAAAAiABMAAAANAAAAAAAjABMAAAANAAAAAAAkABMAAAANAAAAAAAlABMAAAANAAAAAAAmABMAAAANAAAAAAAnABIAAAAPAAAAAAAnABMAAAAPAAEAAAAnABQAAAAPAAEAAAAnABUAAAAPAAEAAAAnABYAAAAPAAEAAAAnABcAAAAPAAEAAAAnABgAAAAPAAEAAAA=")
-tile_set = SubResource("TileSet_dd0lh")
+script = ExtResource("1_dd0lh")
 
-[node name="Player" parent="." instance=ExtResource("2_4tcl0")]
-position = Vector2(73, 796)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_myo7b")
+animation = &"running"
+autoplay = "running"
+frame = 5
+frame_progress = 0.020835869
 
-[node name="RemoteTransform2D" parent="Player" index="5"]
-remote_path = NodePath("../Camera2D")
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 3.5)
+target_position = Vector2(-22, 0.5)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
-limit_bottom = 900
-limit_smoothed = true
-
-[node name="Enemies" type="Node2D" parent="."]
-
-[node name="Snails" parent="Enemies" instance=ExtResource("4_bfxgj")]
-position = Vector2(1245, 714)
-
-[node name="Snails2" parent="Enemies" instance=ExtResource("4_bfxgj")]
-position = Vector2(1018, 745)
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0.5, 3.5)
+target_position = Vector2(24, 0)
 
 [node name="Killzone" parent="." instance=ExtResource("5_dywbp")]
-position = Vector2(293, 947)
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-shape = SubResource("WorldBoundaryShape2D_dywbp")
+position = Vector2(1.25, 4.25)
+shape = SubResource("RectangleShape2D_jbdcd")
 
-[editable path="Player"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(5.5, 0)
+shape = SubResource("CircleShape2D_e88or")
