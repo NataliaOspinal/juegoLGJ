@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqfvk0725utb7"]
+
+[ext_resource type="Script" uid="uid://rx4m110u72yq" path="res://scripts/ui/credits.gd" id="1_oap8i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcfse"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="ScrollContainer" node_paths=PackedStringArray("text_node")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gcfse")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_oap8i")
+text_node = NodePath("MarginContainer/RichTextLabel")
+credits_time = 25.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]
+[b][u]CRÉDITOS[/u][/b]
+
+[b][u]Producción[/u][/b]   
+Sofía Pimentel 
+Iván Aráoz 
+
+[b][u]Diseño de Juego[/u][/b]  
+Sofía Pimentel  
+Natalia Ospinal  
+Andrea Ugarte  
+Pierina Espejo  
+Pedro Reyes  
+Omar Martínez  
+
+[b][u]Programación[/u][/b]  
+Iván Aráoz  
+Natalia Ospinal  
+
+[b][u]Arte[/u][/b]  
+Sofía Pimentel  
+Andrea Ugarte  
+Pierina Espejo  
+Omar Martínez  
+
+[b][u]Ilustración[/u][/b]  
+Paz Añorga  
+
+[b][u]Diseño de Interfaz (UI)[/u][/b]  
+Andrea Ugarte  
+Pierina Espejo  
+
+[b][u]Audio[/u][/b]  
+Pedro Reyes  
+
+[b]Música Original:[/b]  
+Pedro Reyes  
+
+[b]Diseño de Sonido y Efectos de Sonido:[/b]  
+Pedro Reyes  
+
+[b][u]Herramientas Utilizadas[/u][/b]  
+[b]Motor de Juego:[/b] Godot Engine  
+[b]Lenguaje de Programación:[/b] GDScript  
+[b]Herramientas Gráficas:[/b]  
+- Krita  
+- Blender  
+[b]Edición de Audio:[/b] Audacity  
+
+[b][u]Mensaje Final[/u][/b]  
+[i]Este proyecto fue desarrollado como una experiencia creativa y colaborativa.[/i]  
+
+[b]Gracias por jugar.[/b]
+[/center]"
+fit_content = true
