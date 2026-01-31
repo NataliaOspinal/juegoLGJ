@@ -190,6 +190,9 @@ position = Vector2(73, 796)
 [node name="RemoteTransform2D" parent="Player" index="5"]
 remote_path = NodePath("../Camera2D")
 
+[node name="DashTimer" parent="Player" index="7"]
+wait_time = 0.2
+
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 limit_left = 0
