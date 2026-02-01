@@ -222,6 +222,8 @@ shape = SubResource("RectangleShape2D_qlg0r")
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("16_4ni07")
 
+[node name="FootstepSound" type="AudioStreamPlayer2D" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
@@ -294,8 +296,6 @@ horizontal_alignment = 1
 script = ExtResource("23_4ni07")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-
-[node name="FootstepSound" type="AudioStreamPlayer2D" parent="."]
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.12
