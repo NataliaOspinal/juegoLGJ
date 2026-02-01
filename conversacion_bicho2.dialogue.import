@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bplvs70ao1wph"
+path="res://.godot/imported/conversacion_bicho2.dialogue-122acd0dfab6bcfe0c0c1040557329e4.tres"
+
+[deps]
+
+source_file="res://conversacion_bicho2.dialogue"
+dest_files=["res://.godot/imported/conversacion_bicho2.dialogue-122acd0dfab6bcfe0c0c1040557329e4.tres"]
+
+[params]
+
+defaults=true

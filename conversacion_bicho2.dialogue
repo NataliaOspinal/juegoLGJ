@@ -1,0 +1,12 @@
+~ start
+Alma temerosa: [shake rate=5 level =10] Gracias pero… [speed=1.2] No avances.
+Alma temerosa: [speed=1.2] Si te mueves, [shake rate=5 level =10] algo se puede romper.[/shake]
+Nuri: ¿Y si no se rompe?
+Alma temerosa: [shake rate=15 level =15] ¿Y si sí?
+Alma temerosa: [speed=0.6] ... [wait=0.4] Perder duele.
+Alma temerosa: [speed=0.8] Quedarse quieto, [/speed] no tanto.
+Nuri: Pero tampoco se vive.
+Alma temerosa: [speed=0.8]  …Eso es lo que más miedo te daba, pero aún así seguías adelante.
+
+
+=> END

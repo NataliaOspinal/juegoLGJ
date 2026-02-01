@@ -29,21 +29,28 @@ var nivel_permite_dash : bool = false
 var is_transicionando: bool = false
 
 func _ready() -> void:
+	var ruta_actual = get_tree().current_scene.scene_file_path
+	
+	if "level1" in ruta_actual:
+		nivel_permite_dash = true
+		
+		# --- CORRECCIÓN CLAVE ---
+		# Si estamos en Level 1, forzamos que no haya máscara
+		Global.skin_alternativa = false 
+		sufijo_anim = "" 
+		
+	else:
+		nivel_permite_dash = false
+		# En otros niveles (Level 2), respetamos lo que diga la variable global
+		if Global.skin_alternativa:
+			sufijo_anim = "_masc"
+		else:
+			sufijo_anim = ""
+
+	# Posicionar al jugador si viene de una transición
 	if Global.viene_de_mascara:
 		global_position = Global.posicion_jugador
 		Global.viene_de_mascara = false
-	
-	if Global.skin_alternativa == true:
-		sufijo_anim = "_masc"
-	else:
-		sufijo_anim = ""
-		
-	var ruta_actual = get_tree().current_scene.scene_file_path
-	# Usamos un chequeo seguro por si la escena no está guardada aún
-	if ruta_actual and "level1" in ruta_actual:
-		nivel_permite_dash = true
-	else:
-		nivel_permite_dash = false
 
 # CAMBIO IMPORTANTE: Usamos _physics_process para CharacterBody2D
 func _physics_process(delta: float) -> void:
