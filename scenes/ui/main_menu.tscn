@@ -1,11 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://vhaooiul6kls"]
+[gd_scene load_steps=22 format=3 uid="uid://vhaooiul6kls"]
 
 [ext_resource type="Script" uid="uid://cvrmeq8s2wbnu" path="res://scripts/ui/main_menu.gd" id="1_sl1te"]
 [ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_1g8jr"]
 [ext_resource type="Texture2D" uid="uid://hph4bfrx7hd8" path="res://assets/ui/btn_gris.png" id="3_1g8jr"]
+[ext_resource type="Texture2D" uid="uid://7htpfag7bjky" path="res://assets/images/background/PORTADA_MENU_NURI_1600_x_900_ew.png" id="4_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://cm58qlcn7nxnj" path="res://assets/images/NameActualizado.png" id="5_uhagc"]
+[ext_resource type="Texture2D" uid="uid://m72g4opmuu6f" path="res://assets/images/image.png" id="6_uhagc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.14117648, 0.63529414, 0.98039216, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m1kxf"]
 texture = ExtResource("3_1g8jr")
@@ -14,42 +18,51 @@ axis_stretch_vertical = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x2yvf"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.98039216, 0.14117648, 0.34117648, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhagc"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.8352941, 0.9764706, 0.9843137, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btxxm"]
 texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wb0q5"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.27058825, 0.08235294, 0.9019608, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q85j6"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.8352941, 0.9764706, 0.9843137, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8g5eo"]
 texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7suek"]
 texture = ExtResource("3_1g8jr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otr3d"]
-texture = ExtResource("3_1g8jr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ekit"]
-texture = ExtResource("3_1g8jr")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4uci"]
-texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.27058825, 0.08235294, 0.9019608, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_877pj"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0, 0.09019608, 0.2509804, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayp64"]
 texture = ExtResource("3_1g8jr")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y2j7i"]
 texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.18431373, 0.61960787, 0.85882354, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otr3d"]
+texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.8352941, 0.9764706, 0.9843137, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ekit"]
+texture = ExtResource("3_1g8jr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n4uci"]
+texture = ExtResource("3_1g8jr")
+modulate_color = Color(0.27058825, 0.08235294, 0.9019608, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -61,28 +74,29 @@ grow_vertical = 2
 script = ExtResource("1_sl1te")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -292.0
-offset_top = -445.0
-offset_right = 278.0
-offset_bottom = 443.0
+offset_left = 119.00006
+offset_top = -102.0
+offset_right = 689.0
+offset_bottom = 581.9308
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 10
+scale = Vector2(0.6086941, 0.55999815)
+theme_override_constants/separation = 40
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_pressed_color = Color(0.7360942, 3.4461616e-05, 0.5513051, 1)
-theme_override_colors/font_hover_color = Color(0.99999994, 0.8210198, 0.15146911, 1)
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_1g8jr")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_1g8jr")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_m1kxf")
 theme_override_styles/hover = SubResource("StyleBoxTexture_x2yvf")
@@ -91,8 +105,10 @@ text = "Iniciar"
 [node name="Tutorial" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.075102426, 0.40996975, 0.5837191, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_1g8jr")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_uhagc")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_btxxm")
 theme_override_styles/hover = SubResource("StyleBoxTexture_wb0q5")
@@ -101,34 +117,82 @@ text = "Tutorial"
 [node name="Story" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.4117647, 0.58431375, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_1g8jr")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_q85j6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_8g5eo")
 theme_override_styles/hover = SubResource("StyleBoxTexture_7suek")
 text = "Historia"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("2_1g8jr")
-theme_override_font_sizes/font_size = 80
-theme_override_styles/normal = SubResource("StyleBoxTexture_otr3d")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_8ekit")
-theme_override_styles/hover = SubResource("StyleBoxTexture_n4uci")
-text = "Créditos"
-
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_1g8jr")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxTexture_877pj")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ayp64")
 theme_override_styles/hover = SubResource("StyleBoxTexture_y2j7i")
 text = "Salir"
 
+[node name="BG" type="TextureRect" parent="."]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_x2yvf")
+
+[node name="Title" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 122.0
+offset_right = 1499.0
+offset_bottom = 338.0
+scale = Vector2(0.9199994, 0.9199994)
+mouse_filter = 2
+texture = ExtResource("5_uhagc")
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -299.0
+offset_top = -111.0
+offset_right = 43.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.7600049, 0.7600049)
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.07450981, 0.4117647, 0.58431375, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_1g8jr")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_otr3d")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8ekit")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n4uci")
+text = "Créditos"
+
+[node name="PJ" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 32.999996
+offset_right = 435.0
+offset_bottom = 533.0
+scale = Vector2(1.6800001, 1.6800001)
+mouse_filter = 2
+texture = ExtResource("6_uhagc")
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
-[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

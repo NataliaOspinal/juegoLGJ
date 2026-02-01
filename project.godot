@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*res://scripts/Global.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+MusicManager="*res://scenes/music_manager.tscn"
 
 [dialogue_manager]
 
@@ -29,6 +30,10 @@ runtime/balloon_path="res://assets/ui/caja_dialogo.tscn"
 window/size/viewport_width=1600
 window/size/viewport_height=900
 window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/iarao/Downloads/video.avi"
 
 [editor_plugins]
 
