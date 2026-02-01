@@ -17,6 +17,7 @@ horizontal_scroll_mode = 0
 vertical_scroll_mode = 3
 script = ExtResource("1_oap8i")
 text_node = NodePath("MarginContainer/RichTextLabel")
+credits_time = 15.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -30,11 +31,11 @@ theme_override_fonts/bold_font = ExtResource("2_jkvjv")
 theme_override_fonts/bold_italics_font = ExtResource("2_jkvjv")
 theme_override_fonts/italics_font = ExtResource("2_jkvjv")
 theme_override_fonts/mono_font = ExtResource("2_jkvjv")
-theme_override_font_sizes/normal_font_size = 20
-theme_override_font_sizes/bold_font_size = 20
-theme_override_font_sizes/bold_italics_font_size = 20
-theme_override_font_sizes/italics_font_size = 20
-theme_override_font_sizes/mono_font_size = 20
+theme_override_font_sizes/normal_font_size = 25
+theme_override_font_sizes/bold_font_size = 25
+theme_override_font_sizes/bold_italics_font_size = 25
+theme_override_font_sizes/italics_font_size = 25
+theme_override_font_sizes/mono_font_size = 25
 bbcode_enabled = true
 text = "[center]
 [b][u]CRÉDITOS[/u][/b]

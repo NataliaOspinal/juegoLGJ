@@ -1,6 +1,6 @@
 extends Control
 
-const MAIN_MENU_SCENE := "res://scenes/ui/main_menu.tscn"
+const MAIN_MENU_SCENE := "res://scenes/ui/credits_new.tscn"
 
 @onready var yes_button: Button = $Yes
 @onready var no_button: Button = $No
