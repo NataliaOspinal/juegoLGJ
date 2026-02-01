@@ -1,5 +1,7 @@
 extends Area2D
 
+signal npc_liberado(id_npc: String)
+
 # --- CAMBIO IMPORTANTE ---
 # En lugar de una constante fija, usamos una variable exportada.
 # Esto hará que aparezca un campo en el Inspector para elegir el archivo.
@@ -65,6 +67,8 @@ func liberar_alma():
 		esencia.global_position = global_position
 	
 	# Adiós NPC
+	# Avisamos al nivel ANTES de destruirnos
+	npc_liberado.emit(id_npc)
 	queue_free()
 
 # --- Detección del Player ---
