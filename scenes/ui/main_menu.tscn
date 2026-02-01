@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://hph4bfrx7hd8" path="res://assets/ui/btn_gris.png" id="3_1g8jr"]
 [ext_resource type="Texture2D" uid="uid://7htpfag7bjky" path="res://assets/images/background/PORTADA_MENU_NURI_1600_x_900_ew.png" id="4_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://cm58qlcn7nxnj" path="res://assets/images/NameActualizado.png" id="5_uhagc"]
-[ext_resource type="Texture2D" uid="uid://m72g4opmuu6f" path="res://assets/images/image.png" id="6_uhagc"]
+[ext_resource type="Texture2D" uid="uid://bct6ge24dw7kc" path="res://assets/images/nuri_sticker_01.png" id="6_uhagc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1g8jr"]
 texture = ExtResource("3_1g8jr")
@@ -184,11 +184,17 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_n4uci")
 text = "Créditos"
 
 [node name="PJ" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 32.999996
-offset_right = 435.0
-offset_bottom = 533.0
-scale = Vector2(1.6800001, 1.6800001)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -102.99999
+offset_top = 2.0000007
+offset_right = 2156.3682
+offset_bottom = 1273.7014
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4130402, 0.4130402)
 mouse_filter = 2
 texture = ExtResource("6_uhagc")
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bgektx3n7grk5"]
+[gd_scene load_steps=17 format=3 uid="uid://bgektx3n7grk5"]
 
 [ext_resource type="Texture2D" uid="uid://7htpfag7bjky" path="res://assets/images/background/PORTADA_MENU_NURI_1600_x_900_ew.png" id="1_6e533"]
 [ext_resource type="Script" uid="uid://mvt4kkd17yi2" path="res://scripts/ui/tutorial.gd" id="1_vic77"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d1byfa8dgiehm" path="res://assets/images/tutorial/Controles/Control_E5.png" id="10_uquod"]
 [ext_resource type="Texture2D" uid="uid://dgnbcfx5ebmej" path="res://assets/images/tutorial/Objetivos/Obj1.png" id="11_nmdvm"]
 [ext_resource type="Texture2D" uid="uid://b4n6gco5nfnq5" path="res://assets/images/tutorial/Enemigos/Enemi1.png" id="12_7gg0y"]
+[ext_resource type="Texture2D" uid="uid://c41jv7fhq0k6y" path="res://assets/images/tutorial/Enemigos/enemigo_fantasma1.png" id="13_2adkx"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nrihu"]
 texture = ExtResource("3_gcvyo")
@@ -372,12 +373,31 @@ texture = ExtResource("5_2adkx")
 
 [node name="TextureRect5" type="TextureRect" parent="CenterContainer/HBoxContainer/TextureRect3"]
 layout_mode = 0
-offset_left = 152.0
-offset_top = 333.0
-offset_right = 683.0
-offset_bottom = 556.3975
-scale = Vector2(0.35999873, 0.68400216)
+offset_left = 190.0
+offset_top = 347.0
+offset_right = 633.0581
+offset_bottom = 533.3994
+scale = Vector2(0.2400036, 0.4560099)
 texture = ExtResource("12_7gg0y")
+
+[node name="TextureRect6" type="TextureRect" parent="CenterContainer/HBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 322.0
+offset_right = 652.9084
+offset_bottom = 626.818
+scale = Vector2(0.2400036, 0.4560099)
+texture = ExtResource("13_2adkx")
+
+[node name="TextureRect7" type="TextureRect" parent="CenterContainer/HBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 315.0
+offset_top = 317.0
+offset_right = 929.9084
+offset_bottom = 621.818
+scale = Vector2(0.2400036, 0.4560099)
+texture = ExtResource("13_2adkx")
+flip_h = true
 
 [node name="Label5" type="Label" parent="CenterContainer/HBoxContainer/TextureRect3"]
 layout_mode = 1

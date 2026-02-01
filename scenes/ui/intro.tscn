@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf3thpx08ktp3"]
+[gd_scene load_steps=3 format=3 uid="uid://bf3thpx08ktp3"]
 
 [ext_resource type="Script" uid="uid://fi5xpw77vl6n" path="res://scripts/ui/intro.gd" id="1_i8df0"]
+[ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_i2slu"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -56,8 +57,8 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -672.0
 offset_top = -178.0
-offset_right = 648.0
-offset_bottom = -62.0
+offset_right = 678.0
+offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 0
 
@@ -68,4 +69,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_i2slu")
+theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
