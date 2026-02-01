@@ -6,18 +6,35 @@ extends Control
 @export_range(0.1, 5.0, 0.05) var fade_time := 0.6
 @export_range(0.5, 15.0, 0.1) var post_slide_pause := 0.4
 
-# Máquina de escribir
+# Máquina de escribir (genérico)
 @export_range(0.005, 0.1, 0.005) var type_speed := 0.03
 @export_range(0.1, 3.0, 0.1) var type_line_pause := 0.8
+
+# Máquina de escribir SOLO para las líneas finales
+@export_range(0.01, 0.25, 0.005) var final_type_speed := 0.06
+@export_range(0.1, 5.0, 0.1) var final_line_pause := 1.0
+@export_range(0.0, 2.0, 0.05) var final_fade_between_lines := 0.25
 
 @onready var image: TextureRect = $Image
 @onready var text: RichTextLabel = $TextBox/RichTextLabel
 @onready var fade: ColorRect = $Fade
 @onready var glitch: ColorRect = $Glitch
+@onready var text_box: Control = $TextBox
 
 var index := 0
 var playing := false
 var skip_requested := false
+
+# Guardamos layout original para poder restaurarlo tras la secuencia final
+var _textbox_saved := false
+var _textbox_anchor_left := 0.0
+var _textbox_anchor_top := 0.0
+var _textbox_anchor_right := 0.0
+var _textbox_anchor_bottom := 0.0
+var _textbox_offset_left := 0.0
+var _textbox_offset_top := 0.0
+var _textbox_offset_right := 0.0
+var _textbox_offset_bottom := 0.0
 
 var slides := [
 	{
@@ -53,7 +70,10 @@ var slides := [
 var final_lines := [
 	"Esto es Stillmind." ,
 	"Stillmind existe para las almas que murieron cargando máscaras.",
-	"En vida era experta en seguir instrucciones, en ponerse la máscara y sonreír. Tú eres diferente. Tú tienes el control ahora. No la dejes quieta. Muévela.",
+	"En vida era experta en seguir instrucciones, en ponerse la máscara y sonreír.",
+	"Tú eres diferente.",
+	"Tú tienes el control ahora.",
+	"No la dejes quieta. Muévela.",
 	"Bienvenida, Nuri."
 ]
 
@@ -61,6 +81,9 @@ func _ready() -> void:
 	fade.modulate.a = 1.0
 	image.modulate.a = 0.0
 	text.modulate.a = 0.0
+
+	# Guardamos el layout inicial del textbox (viene anclado abajo en la escena)
+	_save_textbox_layout()
 
 	if glitch:
 		glitch.modulate.a = 0.0
@@ -146,7 +169,8 @@ func _play_final_sequence() -> void:
 	t.finished.connect(func():
 		playing = false
 		await _glitch_to_black()
-		await _typewriter_lines(final_lines)
+		_apply_centered_final_text_layout()
+		await _typewriter_final_lines(final_lines)
 		_finish()
 	)
 
@@ -191,7 +215,128 @@ func _type_line(line: String) -> void:
 		text.text += c
 		await get_tree().create_timer(type_speed).timeout
 
+# Secuencia final: una línea por pantalla, más lenta y con glitch antes de la última
+func _typewriter_final_lines(lines: Array) -> void:
+	playing = true
+	text.bbcode_enabled = false
+	text.text = ""
+	text.modulate.a = 1.0
+
+	var last_index := lines.size() - 1
+	for i in range(lines.size()):
+		if skip_requested:
+			break
+
+		# Escribimos la línea
+		text.text = ""  # cada línea sustituye a la anterior
+		await _type_line_with_speed(String(lines[i]), final_type_speed)
+
+		# Pausa de lectura
+		await get_tree().create_timer(final_line_pause).timeout
+
+		# Transición inmediata de glitch justo después de la línea anterior a la última
+		# (o sea, al terminar el mensaje antes de "Bienvenida, Nuri.")
+		if i == last_index - 1 and not skip_requested:
+			await _glitch_transition_for_final()
+
+		# Si no es la última, desaparece y pasa a la siguiente
+		if i != last_index and i != last_index - 1 and final_fade_between_lines > 0.0:
+			var tw := create_tween()
+			tw.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+			tw.tween_property(text, "modulate:a", 0.0, final_fade_between_lines)
+			await tw.finished
+			text.modulate.a = 1.0
+
+	playing = false
+
+func _type_line_with_speed(line: String, speed: float) -> void:
+	for c in line:
+		if skip_requested:
+			return
+		text.text += c
+		await get_tree().create_timer(speed).timeout
+
+func _glitch_transition_for_final() -> void:
+	# Fallo de pantalla corto e inmediato: corta el texto, destella varias veces.
+	if skip_requested:
+		return
+	if not glitch:
+		# fallback mínimo
+		text.text = ""
+		await get_tree().create_timer(0.15).timeout
+		return
+
+	# Corte inmediato del mensaje previo
+	text.text = ""
+	text.modulate.a = 0.0
+
+	glitch.visible = true
+	# Blanco para simular fallo/flash
+	glitch.color = Color(1, 1, 1, 1)
+
+	# Parpadeo rápido: sensación de "pantalla fallando"
+	for j in range(10):
+		glitch.color.a = 0.95
+		await get_tree().create_timer(0.015).timeout
+		glitch.color.a = 0.0
+		await get_tree().create_timer(0.02).timeout
+
+	glitch.color.a = 0.0
+	text.modulate.a = 1.0
+
+func _save_textbox_layout() -> void:
+	if _textbox_saved or not is_instance_valid(text_box):
+		return
+	_textbox_saved = true
+	_textbox_anchor_left = text_box.anchor_left
+	_textbox_anchor_top = text_box.anchor_top
+	_textbox_anchor_right = text_box.anchor_right
+	_textbox_anchor_bottom = text_box.anchor_bottom
+	_textbox_offset_left = text_box.offset_left
+	_textbox_offset_top = text_box.offset_top
+	_textbox_offset_right = text_box.offset_right
+	_textbox_offset_bottom = text_box.offset_bottom
+
+func _apply_centered_final_text_layout() -> void:
+	if not is_instance_valid(text_box):
+		return
+
+	# Centramos el panel de texto en pantalla.
+	# Mantiene el mismo tamaño que en la escena (por offsets), pero lo coloca en el centro.
+	var w := text_box.size.x
+	var h := text_box.size.y
+	text_box.anchor_left = 0.5
+	text_box.anchor_top = 0.5
+	text_box.anchor_right = 0.5
+	text_box.anchor_bottom = 0.5
+	text_box.offset_left = -w * 0.5
+	text_box.offset_top = -h * 0.5
+	text_box.offset_right = w * 0.5
+	text_box.offset_bottom = h * 0.5
+
+	# Alineación del texto en el centro (y vertical, para que quede centrado dentro del panel)
+	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	text.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	text.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+
+func _restore_textbox_layout() -> void:
+	if not _textbox_saved or not is_instance_valid(text_box):
+		return
+	text_box.anchor_left = _textbox_anchor_left
+	text_box.anchor_top = _textbox_anchor_top
+	text_box.anchor_right = _textbox_anchor_right
+	text_box.anchor_bottom = _textbox_anchor_bottom
+	text_box.offset_left = _textbox_offset_left
+	text_box.offset_top = _textbox_offset_top
+	text_box.offset_right = _textbox_offset_right
+	text_box.offset_bottom = _textbox_offset_bottom
+
+	# Devolvemos alineación por defecto para no afectar otros textos
+	text.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	text.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+
 func _finish() -> void:
+	_restore_textbox_layout()
 	if return_to_menu:
 		get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 	else:
