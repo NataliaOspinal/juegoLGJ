@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://tboxxupb5al0"]
+[gd_scene load_steps=44 format=3 uid="uid://tboxxupb5al0"]
 
 [ext_resource type="Script" uid="uid://qhx4nf0d4yfw" path="res://scripts/player.gd" id="1_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://dgcuesmifpr3u" path="res://assets/sounds/sfx/sfxfootstep_piedras_1.wav" id="2_oprun"]
@@ -10,19 +10,35 @@
 [ext_resource type="AudioStream" uid="uid://cgteku3fjik31" path="res://assets/sounds/sfx/sfxfootstep_piedras_4.wav" id="5_fulsm"]
 [ext_resource type="Texture2D" uid="uid://x38ha0s7x2si" path="res://assets/images/player/Run Nuri.png" id="5_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://cqgu8fwo8hajj" path="res://assets/sounds/sfx/sfxfootstep_piedras_5.wav" id="6_4r5pv"]
-[ext_resource type="AudioStream" uid="uid://gf4md8uf8kup" path="res://assets/sounds/jump.wav" id="6_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://b38x77qinlg8j" path="res://assets/images/player/dash Nuri.png" id="7_a8ls1"]
 [ext_resource type="Texture2D" uid="uid://3lu8t1jtb5i2" path="res://assets/images/features/Vcompleta.png" id="7_fjrip"]
 [ext_resource type="Script" uid="uid://kapffub38ycw" path="res://scenes/contador_visual.gd" id="7_smehm"]
+[ext_resource type="Texture2D" uid="uid://dqbinakljvgpf" path="res://assets/images/player/hit Nuri sin mascara.png" id="8_60mlk"]
 [ext_resource type="Texture2D" uid="uid://dmnqlbvnobhvi" path="res://assets/images/features/VIncompleta.png" id="9_ur7pv"]
 [ext_resource type="Texture2D" uid="uid://ct18buu5k5tgw" path="res://assets/images/player/idle mask Nuri.png" id="10_fulsm"]
 [ext_resource type="Texture2D" uid="uid://cgmwn3gv2va1h" path="res://assets/images/features/HP VIDAS.png" id="10_y4r1p"]
 [ext_resource type="Texture2D" uid="uid://cl5xl4ph8e7i0" path="res://assets/images/player/Jump mask  NURI.png" id="11_qfm1y"]
 [ext_resource type="Texture2D" uid="uid://fdmqtea7l1uq" path="res://assets/images/player/Run Mask Nuri.png" id="14_4r5pv"]
+[ext_resource type="AudioStream" uid="uid://b2ygr7b1osuyb" path="res://assets/sounds/sfx/jump.wav" id="16_4ni07"]
+[ext_resource type="Texture2D" uid="uid://1y846kxajpdp" path="res://assets/images/features/esencia.png" id="21_i4ail"]
+[ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="22_a38lo"]
+[ext_resource type="Script" uid="uid://5kgsialey4k7" path="res://scenes/label.gd" id="23_4ni07"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_60mlk"]
 atlas = ExtResource("7_a8ls1")
 region = Rect2(0, 0, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dt7fs"]
+atlas = ExtResource("7_a8ls1")
+region = Rect2(48, 0, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
+atlas = ExtResource("8_60mlk")
+region = Rect2(0, 0, 32, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf23h"]
+atlas = ExtResource("8_60mlk")
+region = Rect2(32, 0, 32, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
 atlas = ExtResource("2_y4r1p")
@@ -85,18 +101,24 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_60mlk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dt7fs")
 }],
 "loop": true,
 "name": &"dash",
-"speed": 0.5
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_60mlk")
+"texture": SubResource("AtlasTexture_31cv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf23h")
 }],
 "loop": true,
-"name": &"dash_masc",
-"speed": 0.5
+"name": &"dying",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -106,7 +128,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3v2ag")
 }],
 "loop": true,
-"name": &"dying",
+"name": &"dying_masc",
 "speed": 3.0
 }, {
 "frames": [{
@@ -189,16 +211,16 @@ footstep_sfx = Array[AudioStream]([ExtResource("2_oprun"), ExtResource("3_a8ls1"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t4otl")
-animation = &"running_masc"
+animation = &"dying_masc"
 autoplay = "idle"
-frame_progress = 0.07634682
+frame_progress = 0.63219184
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.25, 0.5000005)
 shape = SubResource("RectangleShape2D_qlg0r")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_tuyoq")
+stream = ExtResource("16_4ni07")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -244,6 +266,32 @@ custom_minimum_size = Vector2(90, 10)
 layout_mode = 2
 texture = ExtResource("7_fjrip")
 expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer2"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -199.0
+offset_top = 28.0
+offset_right = -39.0
+offset_bottom = 90.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("21_i4ail")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("22_a38lo")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+script = ExtResource("23_4ni07")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 

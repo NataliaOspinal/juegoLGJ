@@ -9,3 +9,5 @@ var vidas : int = 3
 
 # Variable para saber si usamos la skin alternativa
 var skin_alternativa : bool = false
+
+var esencias_colectadas : int = 0
