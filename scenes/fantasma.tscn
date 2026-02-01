@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvtq83vbrxx6f"]
+
+[ext_resource type="Script" uid="uid://cic74b0pwyvag" path="res://scripts/snail.gd" id="1_n64ir"]
+[ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="2_2mxae"]
+[ext_resource type="Texture2D" uid="uid://djtj7eilayq1u" path="res://assets/images/enemigos/enemigo fantasma.png" id="2_ptde3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5ye4"]
+atlas = ExtResource("2_ptde3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_galht"]
+atlas = ExtResource("2_ptde3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn670"]
+atlas = ExtResource("2_ptde3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r338s"]
+atlas = ExtResource("2_ptde3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_myo7b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5ye4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_galht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn670")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r338s")
+}],
+"loop": true,
+"name": &"running",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e88or"]
+radius = 8.514693
+
+[node name="Fantasma" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_n64ir")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_myo7b")
+animation = &"running"
+autoplay = "running"
+frame_progress = 0.020835869
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 3.5)
+target_position = Vector2(-22, 0.5)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0.5, 3.5)
+target_position = Vector2(24, 0)
+
+[node name="Killzone" parent="." instance=ExtResource("2_2mxae")]
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(1, 1.5)
+shape = SubResource("CircleShape2D_e88or")
