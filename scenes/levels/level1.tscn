@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://2em6cj6agm5g"]
+[gd_scene load_steps=11 format=4 uid="uid://2em6cj6agm5g"]
 
 [ext_resource type="Script" uid="uid://bdwpt4l5bbdj8" path="res://scripts/level_2.gd" id="1_1seuy"]
-[ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="2_4tcl0"]
+[ext_resource type="Texture2D" uid="uid://dckac00cgt8hm" path="res://assets/images/tilemap/tiles mundo gris.png" id="3_dywbp"]
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dywbp"]
+[ext_resource type="Texture2D" uid="uid://dh7spa6yaetu6" path="res://assets/images/background/fondo plomo.png" id="6_1seuy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("1_x6ivy")
@@ -164,29 +165,184 @@ texture = ExtResource("1_x6ivy")
 19:10/0 = 0
 20:10/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1seuy"]
+texture = ExtResource("3_dywbp")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+11:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+11:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:3/0 = 0
+11:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+11:4/0 = 0
+14:4/0 = 0
+15:4/0 = 0
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:6/0 = 0
+1:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:7/0 = 0
+11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:7/0 = 0
+14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:7/0 = 0
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+11:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+14:9/0 = 0
+14:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+15:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+8:11/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_dd0lh"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4tcl0")
+sources/1 = SubResource("TileSetAtlasSource_1seuy")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
 
 [node name="level2" type="Node2D"]
 script = ExtResource("1_1seuy")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1599.0
-offset_bottom = 900.0
-texture = ExtResource("1_dd0lh")
-stretch_mode = 1
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(33, 130)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAD//xYAAAAHAAAAAAD//xcAAAAHAAEAAAAAABYAAAAHAAAAAAAAABcAAAAHAAEAAAABABYAAAAHAAAAAAABABcAAAAHAAEAAAACABYAAAAHAAAAAAACABcAAAAHAAEAAAADABYAAAAIAAAAAAADABcAAAAIAAEAAAAFABUAAAAPAAAAAAAFABYAAAAPAAEAAAAFABcAAAAPAAEAAAAIABMAAAAMAAAAAAAJABMAAAANAAAAAAAKABMAAAANAAAAAAALABMAAAAOAAAAAAAOABUAAAAPAAAAAAAOABYAAAAPAAEAAAASABQAAAAMAAAAAAATABQAAAANAAAAAAAUABQAAAAOAAAAAAAOABcAAAAPAAEAAAAFABgAAAAPAAEAAAAOABgAAAAPAAEAAAD//xgAAAAHAAIAAAAAABgAAAAHAAIAAAABABgAAAAHAAIAAAACABgAAAAHAAIAAAADABgAAAAIAAIAAAD+/xgAAAAGAAIAAAD+/xcAAAAGAAEAAAD+/xYAAAAGAAAAAAAYABMAAAAPAAAAAAAYABQAAAAPAAEAAAAYABUAAAAPAAEAAAAYABYAAAAPAAEAAAAYABcAAAAPAAEAAAAYABgAAAAPAAEAAAAZABQAAAAMAAAAAAAaABQAAAANAAAAAAAbABQAAAANAAAAAAAcABQAAAANAAAAAAAdABQAAAANAAAAAAAeABQAAAANAAAAAAAfABQAAAAOAAAAAAAgABMAAAAPAAAAAAAgABQAAAAPAAEAAAAgABUAAAAPAAEAAAAgABYAAAAPAAEAAAAgABcAAAAPAAEAAAAgABgAAAAPAAEAAAAhABIAAAAPAAAAAAAhABMAAAAPAAEAAAAhABQAAAAPAAEAAAAhABUAAAAPAAEAAAAhABYAAAAPAAEAAAAhABcAAAAPAAEAAAAhABgAAAAPAAEAAAAiABMAAAANAAAAAAAjABMAAAANAAAAAAAkABMAAAANAAAAAAAlABMAAAANAAAAAAAmABMAAAANAAAAAAAnABIAAAAPAAAAAAAnABMAAAAPAAEAAAAnABQAAAAPAAEAAAAnABUAAAAPAAEAAAAnABYAAAAPAAEAAAAnABcAAAAPAAEAAAAnABgAAAAPAAEAAAA=")
+tile_map_data = PackedByteArray("AAD//xcAAQADAAIAAAD//xYAAQADAAIAAAD//xUAAQADAAAAAAAAABUAAQAEAAAAAAABABUAAQAFAAAAAAACABUAAQAIAAAAAAACABYAAQAIAAEAAAACABcAAQAIAAEAAAAFABUAAQAGAAAAAAAFABYAAQAGAAAAAAAFABcAAQAGAAAAAAAHABYAAQAGAAAAAAALABYAAQAGAAAAAAALABUAAQAGAAAAAAALABcAAQAGAAAAAAAOABUAAQADAAAAAAAPABUAAQAEAAAAAAAQABUAAQAFAAAAAAARABUAAQAIAAAAAAAOABYAAQADAAEAAAAOABcAAQADAAEAAAARABYAAQAIAAEAAAARABcAAQAIAAEAAAAAABYAAQAEAAEAAAAAABcAAQAEAAIAAAABABYAAQAHAAEAAAABABcAAQAHAAIAAAAPABYAAQAEAAEAAAAPABcAAQAEAAIAAAAQABYAAQAHAAEAAAAQABcAAQAHAAIAAAADABEAAQAGAAAAAAAWABUAAQAGAAAAAAAWABYAAQAGAAAAAAAWABQAAQAGAAAAAAAbABMAAQADAAAAAAAbABQAAQADAAEAAAAbABUAAQADAAIAAAAbABYAAQADAAMAAAAbABcAAQADAAQAAAAcABMAAQAEAAAAAAAdABMAAQAFAAAAAAAeABMAAQAGAAAAAAAfABMAAQAHAAAAAAAgABMAAQAHAAAAAAAhABMAAQAIAAAAAAAhABQAAQAIAAEAAAAhABUAAQAIAAIAAAAhABYAAQAIAAMAAAAhABcAAQAIAAQAAAAcABQAAQAEAAEAAAAdABQAAQAFAAEAAAAeABQAAQAGAAEAAAAgABQAAQAHAAEAAAAfABQAAQAGAAEAAAAdABUAAQAFAAIAAAAeABUAAQAFAAIAAAAfABUAAQAGAAIAAAAeABYAAQAGAAIAAAAfABYAAQAGAAIAAAAdABYAAQAFAAIAAAAcABUAAQAEAAIAAAAcABYAAQAEAAMAAAAcABcAAQAEAAQAAAAdABcAAQAFAAMAAAAeABcAAQAGAAMAAAAfABcAAQAFAAMAAAAgABcAAQAGAAMAAAAgABUAAQAHAAIAAAAgABYAAQAHAAMAAAAmABQAAQAFAAAAAAAmABUAAQAFAAAAAAAmABYAAQAFAAAAAAAqABQAAQAFAAAAAAAqABUAAQAFAAAAAAAqABYAAQAFAAAAAAAuABQAAQADAAAAAAAvABUAAQAIAAEAAAAvABQAAQAIAAAAAAAuABUAAQADAAEAAAAuABYAAQADAAIAAAAuABcAAQADAAMAAAAvABYAAQAIAAIAAAAvABcAAQAIAAMAAAAyABUAAQADAAAAAAAyABYAAQADAAEAAAAyABcAAQADAAIAAAAzABUAAQAFAAAAAAA0ABUAAQAGAAAAAAA1ABUAAQAFAAAAAAA2ABUAAQAGAAAAAAA3ABUAAQAFAAAAAAA4ABUAAQAGAAAAAAA5ABUAAQAIAAAAAAA5ABYAAQAIAAEAAAA5ABcAAQAIAAIAAAAzABYAAQAEAAEAAAA0ABYAAQAGAAEAAAA1ABYAAQAFAAEAAAA2ABYAAQAGAAEAAAA3ABYAAQAFAAEAAAA4ABYAAQAHAAEAAAAzABcAAQAEAAIAAAA4ABcAAQAHAAIAAAA0ABcAAQAFAAIAAAA1ABcAAQAGAAIAAAA2ABcAAQAFAAIAAAA3ABcAAQAGAAIAAAA9ABUAAQAFAAAAAAA9ABQAAQAFAAAAAAA9ABYAAQAFAAAAAABCABQAAQADAAAAAABDABQAAQAEAAAAAABEABQAAQAFAAAAAABFABQAAQAGAAAAAABGABQAAQAHAAAAAABHABQAAQAHAAAAAABIABQAAQAGAAAAAABJABQAAQAGAAAAAABKABQAAQAGAAAAAABLABQAAQAIAAAAAABPABUAAQADAAEAAABPABYAAQADAAEAAABPABcAAQADAAEAAABPABQAAQADAAEAAABPABMAAQADAAAAAABQABMAAQAEAAAAAABRABMAAQAFAAAAAABSABMAAQAGAAAAAABQABQAAQAEAAEAAABRABQAAQAFAAEAAABSABQAAQAGAAEAAABQABUAAQAFAAIAAABRABUAAQAGAAIAAABQABYAAQAFAAIAAABRABYAAQAGAAIAAABQABcAAQAFAAIAAABRABcAAQAGAAIAAABSABUAAQAGAAIAAABSABYAAQAGAAIAAABSABcAAQAGAAIAAAAGABAAAQADAAUAAAAHABAAAQAFAAUAAAAIABAAAQAGAAUAAAAJABAAAQAIAAUAAAAGAA8AAQADAAIAAAAGAA4AAQADAAIAAAAJAA8AAQAIAAIAAAAJAA4AAQAIAAIAAAAGAA0AAQADAAAAAAAJAA0AAQAIAAAAAAAHAA0AAQAFAAAAAAAIAA0AAQAFAAAAAAAHAA4AAQAEAAEAAAAIAA4AAQAHAAEAAAAHAA8AAQAEAAQAAAAIAA8AAQAHAAQAAAAMAAwAAQAFAAAAAAANAAwAAQAFAAAAAAAOAAwAAQAFAAAAAAAPAAwAAQAFAAAAAAAQAAwAAQAFAAAAAAA=")
 tile_set = SubResource("TileSet_dd0lh")
 
 [node name="Player" parent="." instance=ExtResource("2_4tcl0")]
-position = Vector2(73, 796)
+position = Vector2(58, 758)
 
 [node name="RemoteTransform2D" parent="Player" index="6"]
 remote_path = NodePath("../Camera2D")
@@ -207,5 +363,12 @@ es_mortal = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_dywbp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -5
+offset_top = -623.0
+offset_right = 2707.5557
+offset_bottom = 900.0
+texture = ExtResource("6_1seuy")
 
 [editable path="Player"]
