@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7mb02crexwda"]
+[gd_scene load_steps=3 format=3 uid="uid://dgj47kd581rkq"]
 
 [ext_resource type="Script" uid="uid://bjnw5c2vslv08" path="res://scripts/ui/intro_cinematic.gd" id="1_i2slu"]
-[ext_resource type="VideoStream" uid="uid://bpuigp4fw65oi" path="res://assets/cinematics/CINEMÁTICA_MÚSICA.ogv" id="2_j6b1i"]
+[ext_resource type="VideoStream" uid="uid://ncso2ojp4jmh" path="res://assets/cinematics/CINEMÁTICA_MÚSICA_actualizada.ogv" id="2_fbnkq"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -19,6 +19,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("2_j6b1i")
+stream = ExtResource("2_fbnkq")
 autoplay = true
 expand = true
