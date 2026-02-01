@@ -1,6 +1,7 @@
 [gd_scene load_steps=9 format=4 uid="uid://bpulpkrpkgocj"]
 
-[ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_d5djh"]
+[ext_resource type="Script" uid="uid://bdwpt4l5bbdj8" path="res://scripts/level_2.gd" id="1_ok6xr"]
+[ext_resource type="Texture2D" uid="uid://dh7spa6yaetu6" path="res://assets/images/background/fondo plomo.png" id="2_d5djh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_nos0u"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="3_71baw"]
 [ext_resource type="PackedScene" uid="uid://bcnpyjjvkg47p" path="res://scenes/NPC.tscn" id="5_d5djh"]
@@ -171,11 +172,12 @@ sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dywbp"]
 
 [node name="level2" type="Node2D"]
+script = ExtResource("1_ok6xr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1599.0
 offset_bottom = 900.0
-texture = ExtResource("1_d5djh")
+texture = ExtResource("2_d5djh")
 stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]

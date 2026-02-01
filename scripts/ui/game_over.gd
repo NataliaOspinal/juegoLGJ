@@ -6,6 +6,10 @@ extends Control
 @onready var exit_btn: Button = $VBoxContainer/Exit
 
 func _ready() -> void:
+	MusicManager.duck_music(-12.0, 0.25)
+
+	MusicManager.play_stinger(preload("res://assets/sounds/music/music_dead.wav"), -2.0)
+	
 	overlay.modulate.a = 0.0
 	box.modulate.a = 0.0
 

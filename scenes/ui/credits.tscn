@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_jkvjv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcfse"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0, 0, 0, 0)
 
 [node name="Credits" type="ScrollContainer" node_paths=PackedStringArray("text_node")]
 anchors_preset = 15

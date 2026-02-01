@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn6env3ao0uvv"]
+
+[ext_resource type="Texture2D" uid="uid://7htpfag7bjky" path="res://assets/images/background/PORTADA_MENU_NURI_1600_x_900_ew.png" id="1_w8gk4"]
+[ext_resource type="PackedScene" uid="uid://bqfvk0725utb7" path="res://scenes/ui/credits.tscn" id="2_y5fcg"]
+
+[node name="CreditsNew" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_w8gk4")
+stretch_mode = 6
+
+[node name="Credits" parent="." instance=ExtResource("2_y5fcg")]
+z_index = 1
+layout_mode = 1
