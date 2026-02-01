@@ -2,8 +2,10 @@ extends CanvasLayer
 
 ## --- TUS IMÁGENES ---
 # Asegúrate de que estas rutas sean exactas a tus archivos
-const SKIN_NPC = preload("res://assets/ui/Dialogo_Bicho1.png")
+const SKIN_BICHO1 = preload("res://assets/ui/Dialogo_Bicho1.png")
 const SKIN_NURI = preload("res://assets/ui/DialogoNuri_Mascara.png")
+const SKIN_BICHO2 = preload("res://assets/ui/Dialogo_Bicho2.png")
+const SKIN_BICHO3 = preload("res://assets/ui/Dialogo_Bicho3.png")
 
 ## --- REFERENCIA AL NODO DE IMAGEN ---
 # Busca el nodo "FondoVisual" dentro de "Balloon"
@@ -141,9 +143,15 @@ func apply_dialogue_line() -> void:
 		match dialogue_line.character:
 			"Nuri":
 				fondo_visual.texture = SKIN_NURI
+			"Alma desapegada": # Nombre que usarás en el archivo .dialogue
+				fondo_visual.texture = SKIN_BICHO1
+			"Alma culpable": # Nombre que usarás en el archivo .dialogue
+				fondo_visual.texture = SKIN_BICHO2
+			"Alma temerosa": # Nombre que usarás en el archivo .dialogue
+				fondo_visual.texture = SKIN_BICHO3
 			_:
-				# Si no es Nuri (es Alma, NPC, etc), usa la azul
-				fondo_visual.texture = SKIN_NPC
+				# Imagen por defecto si el nombre no coincide con ninguno
+				fondo_visual.texture = SKIN_BICHO1
 	# -----------------------------------------------
 
 	dialogue_label.hide()

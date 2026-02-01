@@ -25,23 +25,40 @@ var herido : bool = false
 var sufijo_anim : String = "" 
 var nivel_permite_dash : bool = false
 
+# Variable para bloquear el movimiento mientras se pone la máscara
+var is_transicionando: bool = false
+
 func _ready() -> void:
+	var ruta_actual = get_tree().current_scene.scene_file_path
+	
+	if "level1" in ruta_actual:
+		nivel_permite_dash = true
+		
+		# --- CORRECCIÓN CLAVE ---
+		# Si estamos en Level 1, forzamos que no haya máscara
+		Global.skin_alternativa = false 
+		sufijo_anim = "" 
+		
+	else:
+		nivel_permite_dash = false
+		# En otros niveles (Level 2), respetamos lo que diga la variable global
+		if Global.skin_alternativa:
+			sufijo_anim = "_masc"
+		else:
+			sufijo_anim = ""
+
+	# Posicionar al jugador si viene de una transición
 	if Global.viene_de_mascara:
 		global_position = Global.posicion_jugador
 		Global.viene_de_mascara = false
-	
-	if Global.skin_alternativa == true:
-		sufijo_anim = "_masc"
-	else:
-		sufijo_anim = ""
-		
-	var ruta_actual = get_tree().current_scene.scene_file_path
-	if "level1" in ruta_actual:
-		nivel_permite_dash = true
-	else:
-		nivel_permite_dash = false
 
-func _process(delta: float) -> void:
+# CAMBIO IMPORTANTE: Usamos _physics_process para CharacterBody2D
+func _physics_process(delta: float) -> void:
+	# 1. BLOQUEO DE TRANSICIÓN
+	# Si estamos poniéndonos la máscara, detenemos toda la lógica de movimiento aquí.
+	if is_transicionando:
+		return
+
 	# -- ESTADO DE HERIDO --
 	if herido:
 		if not is_on_floor():
@@ -70,25 +87,19 @@ func _process(delta: float) -> void:
 
 	move_and_slide()
 
-	# --- 3. ANIMACIONES (CORREGIDO) ---
+	# --- 3. ANIMACIONES ---
 	var anim_base = "idle"
 	
-	# PRIORIDAD 1: ¿Está haciendo DASH? (No importa si es aire o suelo)
 	if dashing:
 		anim_base = "dash"
-	
-	# PRIORIDAD 2: Si NO es dash, ¿Está en el suelo?
 	elif is_on_floor():
 		if velocity.x != 0:
 			anim_base = "running"
 		else:
 			anim_base = "idle"
-			
-	# PRIORIDAD 3: Si NO es dash y NO está en el suelo -> Salto
 	else:
 		anim_base = "jumping"
 	
-	# Aplicamos el nombre final + sufijo
 	animated_sprite_2d.animation = anim_base + sufijo_anim
 
 	if direction == 1.0:
@@ -113,24 +124,39 @@ func _process(delta: float) -> void:
 		dash_timer.start()
 		dash_again_timer.start()
 	
-	# --- 6. CAMBIO DE NIVEL ---
+	# --- 6. DETECTAR INPUT DE MÁSCARA ---
+	# (Aquí solo detectamos la tecla, la lógica pesada la pasamos a una función aparte)
 	if Input.is_action_just_pressed("mascara") and is_on_floor():
-		Engine.time_scale = 1.0 
-		
-		# Guardar datos
-		Global.posicion_jugador = global_position
-		Global.viene_de_mascara = true
-		Global.skin_alternativa = !Global.skin_alternativa
-		
-		# Cambiar escena
-		var ruta_nivel1 = "res://scenes/levels/level1.tscn"
-		var ruta_nivel2 = "res://scenes/levels/level2.tscn"
-		var actual = get_tree().current_scene.scene_file_path
-		
-		if actual == ruta_nivel1:
-			get_tree().change_scene_to_file(ruta_nivel2)
-		else:
-			get_tree().change_scene_to_file(ruta_nivel1)
+		iniciar_transicion_nivel()
+
+
+# --- NUEVA FUNCIÓN PARA ORDENAR LA TRANSICIÓN ---
+func iniciar_transicion_nivel():
+	# A. Bloqueamos el input y movimiento (gracias al if al inicio de _physics_process)
+	is_transicionando = true
+	velocity = Vector2.ZERO # Frenamos al personaje en seco
+	
+	# B. Reproducimos la animación
+	# Asegúrate de que "putting" existe en tus SpriteFrames. 
+	# Si tienes una versión con y sin máscara, añade + sufijo_anim si es necesario.
+	animated_sprite_2d.play("putting" + sufijo_anim)
+	
+	# C. Esperamos a que el nodo AnimatedSprite termine la animación
+	await animated_sprite_2d.animation_finished
+	
+	# D. Lógica de cambio de escena
+	Global.posicion_jugador = global_position
+	Global.viene_de_mascara = true
+	Global.skin_alternativa = !Global.skin_alternativa
+	
+	var ruta_nivel1 = "res://scenes/levels/level1.tscn"
+	var ruta_nivel2 = "res://scenes/levels/level2.tscn"
+	var actual = get_tree().current_scene.scene_file_path
+	
+	if actual == ruta_nivel1:
+		get_tree().change_scene_to_file(ruta_nivel2)
+	else:
+		get_tree().change_scene_to_file(ruta_nivel1)
 
 # --- FUNCIONES AUXILIARES ---
 
