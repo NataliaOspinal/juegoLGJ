@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_1g8jr"]
 [ext_resource type="AudioStream" uid="uid://dymdumvhdqk65" path="res://assets/sounds/sfx/menu/SFX_menú_subebaja.wav" id="2_wb0q5"]
 [ext_resource type="Texture2D" uid="uid://hph4bfrx7hd8" path="res://assets/ui/btn_gris.png" id="3_1g8jr"]
-[ext_resource type="AudioStream" uid="uid://dxv0qkdgtkh22" path="res://assets/sounds/sfx/menu/SFX_menú_press.wav" id="3_q85j6"]
+[ext_resource type="AudioStream" uid="uid://87ajtec4rsvn" path="res://assets/sounds/sfx/menu/SFX_menú_press (1).wav" id="3_wb0q5"]
 [ext_resource type="Texture2D" uid="uid://7htpfag7bjky" path="res://assets/images/background/PORTADA_MENU_NURI_1600_x_900_ew.png" id="4_x2yvf"]
 [ext_resource type="Texture2D" uid="uid://cm58qlcn7nxnj" path="res://assets/images/NameActualizado.png" id="5_uhagc"]
 [ext_resource type="Texture2D" uid="uid://bct6ge24dw7kc" path="res://assets/images/nuri_sticker_01.png" id="6_uhagc"]
@@ -80,7 +80,7 @@ stream = ExtResource("2_wb0q5")
 volume_db = -10.0
 
 [node name="SFX_Click" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_q85j6")
+stream = ExtResource("3_wb0q5")
 volume_db = -8.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
