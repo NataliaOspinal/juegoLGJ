@@ -128,7 +128,11 @@ func _physics_process(delta: float) -> void:
 	# (Aquí solo detectamos la tecla, la lógica pesada la pasamos a una función aparte)
 	if Input.is_action_just_pressed("mascara") and is_on_floor():
 		iniciar_transicion_nivel()
-
+		
+func apply_knockback(knockback_force: Vector2) -> void:
+	# Aplicamos la fuerza directamente a la velocidad
+	velocity = knockback_force
+	move_and_slide()
 
 # --- NUEVA FUNCIÓN PARA ORDENAR LA TRANSICIÓN ---
 func iniciar_transicion_nivel():

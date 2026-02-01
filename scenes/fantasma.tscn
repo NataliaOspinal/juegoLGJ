@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvtq83vbrxx6f"]
+[gd_scene load_steps=17 format=3 uid="uid://bvtq83vbrxx6f"]
 
-[ext_resource type="Script" uid="uid://cic74b0pwyvag" path="res://scripts/snail.gd" id="1_n64ir"]
+[ext_resource type="Script" uid="uid://cic74b0pwyvag" path="res://scripts/fantasma.gd" id="1_n64ir"]
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="2_2mxae"]
 [ext_resource type="Texture2D" uid="uid://djtj7eilayq1u" path="res://assets/images/enemigos/enemigo fantasma.png" id="2_ptde3"]
+[ext_resource type="Texture2D" uid="uid://dykmqk20g8re8" path="res://assets/images/enemigos/dulce.png" id="4_ptde3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptde3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5ye4"]
 atlas = ExtResource("2_ptde3")
@@ -36,36 +39,88 @@ animations = [{
 "texture": SubResource("AtlasTexture_r338s")
 }],
 "loop": true,
-"name": &"running",
-"speed": 20.0
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptde3"]
+atlas = ExtResource("4_ptde3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikiw7"]
+atlas = ExtResource("4_ptde3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq8is"]
+atlas = ExtResource("4_ptde3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2mxae"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptde3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikiw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq8is")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e88or"]
 radius = 8.514693
 
-[node name="Fantasma" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_2mxae"]
+radius = 8.5
+
+[node name="Fantasma" type="CharacterBody2D"]
 scale = Vector2(2, 2)
+collision_layer = 4
 script = ExtResource("1_n64ir")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ptde3")
+
+[node name="Anim_Fantasma" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_myo7b")
-animation = &"running"
-autoplay = "running"
-frame_progress = 0.020835869
+autoplay = "default"
+
+[node name="Anim_Real" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1.5, -2)
+scale = Vector2(0.921875, 0.90625)
+sprite_frames = SubResource("SpriteFrames_2mxae")
+autoplay = "default"
+frame_progress = 0.26828897
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(0, 3.5)
-target_position = Vector2(-22, 0.5)
+position = Vector2(-10, -1)
+target_position = Vector2(0, 12.5)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(0.5, 3.5)
-target_position = Vector2(24, 0)
+position = Vector2(8, -0.5)
+target_position = Vector2(0, 12)
 
 [node name="Killzone" parent="." instance=ExtResource("2_2mxae")]
 collision_layer = 1
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(1, 1.5)
+position = Vector2(1, 2)
 shape = SubResource("CircleShape2D_e88or")
+
+[node name="Area_Empuje" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area_Empuje"]
+position = Vector2(-1.5, 2.5)
+shape = SubResource("CircleShape2D_2mxae")
+
+[connection signal="body_entered" from="Area_Empuje" to="." method="_on_area_empuje_body_entered"]
