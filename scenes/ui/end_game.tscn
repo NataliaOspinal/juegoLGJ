@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://birnnrbxhy6rv"]
+[gd_scene load_steps=8 format=3 uid="uid://cslymeiosrxc7"]
 
 [ext_resource type="Script" uid="uid://dy7ifh6x4agy0" path="res://scripts/ui/end_game.gd" id="1_06hdp"]
 [ext_resource type="Texture2D" uid="uid://btfvt7l1was4o" path="res://assets/ui/Fondo final (1).png" id="1_gpnx6"]

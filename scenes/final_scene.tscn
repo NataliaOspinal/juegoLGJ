@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkwy52pv10dov"]
+
+[ext_resource type="Script" uid="uid://ckh85ies2gnvr" path="res://scenes/final_scene.gd" id="1_4bkdv"]
+[ext_resource type="PackedScene" uid="uid://e1wmsu01xkfn" path="res://assets/ui/caja_dialogo.tscn" id="2_qifxa"]
+
+[node name="final_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4bkdv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = 1603.0
+offset_bottom = 912.0
+expand_mode = 3
+stretch_mode = 6
+
+[node name="CajaDialogo" parent="." instance=ExtResource("2_qifxa")]

@@ -17,7 +17,9 @@ func _go_to_main_menu() -> void:
 		push_error("No se pudo cambiar a la escena del menú principal: %s (err=%s)" % [MAIN_MENU_SCENE, err])
 
 func _on_yes_pressed() -> void:
-	_go_to_main_menu()
+	Global.decision_final = "quitar"
+	get_tree().change_scene_to_file("res://scenes/final_scene.tscn")
 
 func _on_no_pressed() -> void:
-	_go_to_main_menu()
+	Global.decision_final = "mantener"
+	get_tree().change_scene_to_file("res://scenes/final_scene.tscn")
