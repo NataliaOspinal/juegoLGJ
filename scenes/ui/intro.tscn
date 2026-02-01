@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf3thpx08ktp3"]
 
-[ext_resource type="Script" uid="uid://fi5xpw77vl6n" path="res://scripts/ui/intro.gd" id="1_i8df0"]
-[ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_i2slu"]
+[ext_resource type="Script" uid="uid://bjnw5c2vslv08" path="res://scripts/ui/intro_cinematic.gd" id="1_i2slu"]
+[ext_resource type="VideoStream" uid="uid://bpuigp4fw65oi" path="res://assets/cinematics/CINEMÁTICA_MÚSICA.ogv" id="2_j6b1i"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3
@@ -10,65 +10,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_i8df0")
+script = ExtResource("1_i2slu")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="Image" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch_mode = 6
-
-[node name="Glitch" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.36308706, 0.7993371, 0.77237034, 0.003921569)
-
-[node name="Fade" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="TextBox" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -672.0
-offset_top = -178.0
-offset_right = 678.0
-offset_bottom = -33.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_i2slu")
-theme_override_font_sizes/normal_font_size = 24
-bbcode_enabled = true
+stream = ExtResource("2_j6b1i")
+autoplay = true
+expand = true
