@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=12 format=4 uid="uid://bpulpkrpkgocj"]
+=======
+[gd_scene load_steps=16 format=4 uid="uid://bpulpkrpkgocj"]
+>>>>>>> Stashed changes
 
-[ext_resource type="Script" path="res://scripts/level_2.gd" id="1_ok6xr"]
+[ext_resource type="Script" uid="uid://bdwpt4l5bbdj8" path="res://scripts/level_2.gd" id="1_ok6xr"]
 [ext_resource type="Texture2D" uid="uid://dh7spa6yaetu6" path="res://assets/images/background/fondo plomo.png" id="2_d5djh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_nos0u"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="3_71baw"]
@@ -8,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dj4wq"]
 [ext_resource type="Resource" uid="uid://dhe4m3vjn8k27" path="res://conversacion_bicho1.dialogue" id="7_dj4wq"]
 [ext_resource type="Resource" uid="uid://bplvs70ao1wph" path="res://conversacion_bicho2.dialogue" id="8_k0mew"]
+[ext_resource type="Resource" uid="uid://x7pyfp4kbe4c" path="res://dialogos/conversacion_bicho3.dialogue" id="10_oyk6k"]
+[ext_resource type="PackedScene" uid="uid://gj3rlxdhqmwx" path="res://scenes/esencia.tscn" id="11_gycjm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("2_nos0u")
@@ -212,7 +218,19 @@ es_mortal = true
 shape = SubResource("WorldBoundaryShape2D_dywbp")
 
 [node name="NPCBicho1" parent="." instance=ExtResource("5_d5djh")]
+<<<<<<< Updated upstream
 position = Vector2(672, 738)
+=======
+position = Vector2(517, 482)
+scale = Vector2(2, 2)
+collision_mask = 2
+recurso_dialogo = ExtResource("8_k0mew")
+escena_esencia = ExtResource("11_gycjm")
+id_npc = "Bicho1"
+
+[node name="NPCBicho2" parent="." instance=ExtResource("5_d5djh")]
+position = Vector2(987, 704)
+>>>>>>> Stashed changes
 scale = Vector2(2, 2)
 collision_mask = 2
 recurso_dialogo = ExtResource("7_dj4wq")
@@ -223,12 +241,21 @@ scale = Vector2(2, 2)
 collision_mask = 2
 recurso_dialogo = ExtResource("8_k0mew")
 nombre_animacion = "idle_rosa"
+escena_esencia = ExtResource("11_gycjm")
+id_npc = "Bicho2"
 
 [node name="NPCBicho3" parent="." instance=ExtResource("5_d5djh")]
+<<<<<<< Updated upstream
 position = Vector2(1191, 701)
+=======
+position = Vector2(1263, 737)
+>>>>>>> Stashed changes
 scale = Vector2(2, 2)
 collision_mask = 2
+recurso_dialogo = ExtResource("10_oyk6k")
 nombre_animacion = "idle_rojo"
+escena_esencia = ExtResource("11_gycjm")
+id_npc = "Bicho3"
 
 [connection signal="body_exited" from="NPCBicho1" to="NPCBicho1" method="_on_body_exited"]
 [connection signal="body_exited" from="NPCBicho2" to="NPCBicho2" method="_on_body_exited"]

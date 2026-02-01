@@ -1,12 +1,20 @@
 ~ start
-Alma temerosa: [shake rate=5 level =10] Gracias pero… [speed=1.2] No avances.
-Alma temerosa: [speed=1.2] Si te mueves, [shake rate=5 level =10] algo se puede romper.[/shake]
+
+Alma temerosa: [shake rate=5 level=10]Gracias pero…[/shake] [speed=1.2] No avances.
+Alma temerosa: [speed=1.2] Si te mueves, [shake rate=5 level=10] algo se puede romper.[/shake]
 Nuri: ¿Y si no se rompe?
-Alma temerosa: [shake rate=15 level =15] ¿Y si sí?
-Alma temerosa: [speed=0.6] ... [wait=0.4] Perder duele.
+Alma temerosa: [shake rate=15 level=15] ¿Y si sí?[/shake]
+Alma temerosa: [speed=0.6] ... [wait=0.5] Perder duele.
 Alma temerosa: [speed=0.8] Quedarse quieto, [/speed] no tanto.
 Nuri: Pero tampoco se vive.
-Alma temerosa: [speed=0.8]  …Eso es lo que más miedo te daba, pero aún así seguías adelante.
+Alma temerosa: [speed=0.7] …Eso es lo que más miedo te daba, pero aún así seguías adelante.
+Nuri: [wait=0.6][speed=0.7][shake rate=5 level=10]Yo...[/shake]
+Alma temerosa: Está bien, Nuri, creo que ya sabes que somos en realidad…
 
-
+# --- INICIO DE LAS OPCIONES ---
+- No entiendo qué quieres decir…
+	Alma temerosa: Somos fragmentos de ti, [shake rate=5 level=10]máscaras que has llevado mucho tiempo.
+- Ustedes 3 y yo… Somos lo mismo…
+	Nuri: [speed=0.4] Son fragmentos míos…[/speed] [speed=0.6]Los sentimientos que nunca pude resolver, las máscaras que siempre utilicé…
+do liberar_alma()
 => END

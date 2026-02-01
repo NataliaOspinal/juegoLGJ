@@ -11,3 +11,5 @@ var vidas : int = 3
 var skin_alternativa : bool = false
 
 var esencias_colectadas : int = 0
+
+var npcs_liberados: Array = []
