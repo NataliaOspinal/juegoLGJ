@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcnpyjjvkg47p"]
+[gd_scene load_steps=13 format=3 uid="uid://bcnpyjjvkg47p"]
 
 [ext_resource type="Script" uid="uid://bloh8exmd7kbp" path="res://scripts/npc.gd" id="1_mhefn"]
 [ext_resource type="Texture2D" uid="uid://b4o11pvs43c3o" path="res://assets/images/bichitos/idle_bichitoazul.png" id="2_6xvi5"]
+[ext_resource type="Texture2D" uid="uid://dj2ihg0ry2mbw" path="res://assets/images/bichitos/bichitorojo_idle.png" id="3_ktgr7"]
+[ext_resource type="Texture2D" uid="uid://c7o38mkl5c6m2" path="res://assets/images/bichitos/bichitorosa_idle.png" id="4_jnjht"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgr7"]
 atlas = ExtResource("2_6xvi5")
@@ -9,6 +11,22 @@ region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jnjht"]
 atlas = ExtResource("2_6xvi5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pv12"]
+atlas = ExtResource("3_ktgr7")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6c3r"]
+atlas = ExtResource("3_ktgr7")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slm4e"]
+atlas = ExtResource("4_jnjht")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6w2b"]
+atlas = ExtResource("4_jnjht")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7pv12"]
@@ -21,7 +39,29 @@ animations = [{
 "texture": SubResource("AtlasTexture_jnjht")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_azul",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pv12")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6c3r")
+}],
+"loop": true,
+"name": &"idle_rojo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slm4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6w2b")
+}],
+"loop": true,
+"name": &"idle_rosa",
 "speed": 2.5
 }]
 
@@ -35,17 +75,11 @@ script = ExtResource("1_mhefn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7pv12")
-animation = &"idle"
-frame_progress = 0.40071633
+animation = &"idle_rosa"
+frame_progress = 0.12286538
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)
 shape = SubResource("CircleShape2D_6xvi5")
-
-[node name="Label" type="Label" parent="."]
-offset_left = -8.0
-offset_top = -37.0
-offset_right = 32.0
-offset_bottom = -14.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

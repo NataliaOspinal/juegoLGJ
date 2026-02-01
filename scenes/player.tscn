@@ -278,7 +278,7 @@ footstep_sfx = Array[AudioStream]([ExtResource("2_oprun"), ExtResource("3_a8ls1"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_t4otl")
-animation = &"putting_masc"
+animation = &"dying_masc"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
