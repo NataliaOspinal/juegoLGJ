@@ -118,8 +118,12 @@ grow_vertical = 2
 size_flags_vertical = 8
 theme = SubResource("Theme_qq3yp")
 
-[node name="DialogoBicho1" type="Sprite2D" parent="Balloon"]
-position = Vector2(790.99994, 738)
+[node name="FondoVisual" type="TextureRect" parent="Balloon"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 595.00006
+offset_right = 1766.0
+offset_bottom = 943.00006
 scale = Vector2(0.8250295, 0.7859195)
 texture = ExtResource("2_o6f0j")
 
