@@ -1,6 +1,13 @@
 extends CanvasLayer
-## A basic dialogue balloon for use with Dialogue Manager.
 
+## --- TUS IMÁGENES ---
+# Asegúrate de que estas rutas sean exactas a tus archivos
+const SKIN_NPC = preload("res://assets/ui/Dialogo_Bicho1.png")
+const SKIN_NURI = preload("res://assets/ui/DialogoNuri_Mascara.png")
+
+## --- REFERENCIA AL NODO DE IMAGEN ---
+# Busca el nodo "FondoVisual" dentro de "Balloon"
+@onready var fondo_visual: TextureRect = $Balloon/FondoVisual
 
 ## The dialogue resource
 @export var dialogue_resource: DialogueResource
@@ -128,6 +135,16 @@ func apply_dialogue_line() -> void:
 
 	character_label.visible = not dialogue_line.character.is_empty()
 	character_label.text = tr(dialogue_line.character, "dialogue")
+
+	# --- AQUÍ ESTÁ LA LÓGICA DE CAMBIO DE IMAGEN ---
+	if fondo_visual:
+		match dialogue_line.character:
+			"Nuri":
+				fondo_visual.texture = SKIN_NURI
+			_:
+				# Si no es Nuri (es Alma, NPC, etc), usa la azul
+				fondo_visual.texture = SKIN_NPC
+	# -----------------------------------------------
 
 	dialogue_label.hide()
 	dialogue_label.dialogue_line = dialogue_line
