@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://birnnrbxhy6rv"]
+[gd_scene load_steps=8 format=3 uid="uid://birnnrbxhy6rv"]
 
-[ext_resource type="Texture2D" uid="uid://nm4gjwjkvsb1" path="res://assets/ui/Fondo final.png" id="1_fnkk4"]
+[ext_resource type="Script" uid="uid://dy7ifh6x4agy0" path="res://scripts/ui/end_game.gd" id="1_06hdp"]
+[ext_resource type="Texture2D" uid="uid://btfvt7l1was4o" path="res://assets/ui/Fondo final (1).png" id="1_gpnx6"]
+[ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_gpnx6"]
+[ext_resource type="Texture2D" uid="uid://hph4bfrx7hd8" path="res://assets/ui/btn_gris.png" id="3_ewul1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06hdp"]
+texture = ExtResource("3_ewul1")
+modulate_color = Color(0.7771631, 0.7396609, 0.44822252, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p0m0u"]
+texture = ExtResource("3_ewul1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7vetw"]
+texture = ExtResource("3_ewul1")
+modulate_color = Color(0.27058825, 0.08235294, 0.9019608, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,12 +23,113 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_06hdp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 219.0
+offset_top = 181.0
+offset_right = 219.0
+offset_bottom = 181.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_fnkk4")
+scale = Vector2(0.7332602, 0.7332602)
+texture = ExtResource("1_gpnx6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = 117.0
+offset_right = 112.0
+offset_bottom = 177.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.83072364, 0.6566551, 0.35538244, 1)
+theme_override_fonts/font = ExtResource("2_gpnx6")
+theme_override_font_sizes/font_size = 64
+text = "DECIDE"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -539.0
+offset_top = 174.0
+offset_right = 592.0
+offset_bottom = 318.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.78307056, 0.59645385, 0.33080375, 1)
+theme_override_fonts/font = ExtResource("2_gpnx6")
+theme_override_font_sizes/font_size = 40
+text = "El camino termina aquí, pero la elección es tuya,
+¿qué harás con tu máscara?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.1254902, 0.1254902, 0.20784314, 1)
+
+[node name="Yes" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1193.0
+offset_top = -149.0
+offset_right = -720.0
+offset_bottom = -24.257813
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.80925775, 0.80925775)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gpnx6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_06hdp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p0m0u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7vetw")
+text = "Quitarme la máscara"
+expand_icon = true
+
+[node name="No" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -752.0
+offset_top = -149.0
+offset_right = -279.0
+offset_bottom = -24.257813
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.80925775, 0.80925775)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_gpnx6")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_06hdp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_p0m0u")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7vetw")
+text = "Mantener la máscara"
+expand_icon = true
+
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="No" to="." method="_on_no_pressed"]
