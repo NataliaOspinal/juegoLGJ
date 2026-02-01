@@ -1,0 +1,11 @@
+~ start
+
+Npc: ¡Hola viajero!
+Npc: Ten cuidado con los caracoles...
+Npc: Son pequeños pero peligrosos.
+- Gracias por el dato
+	Npc: ¡De nada!
+- Ya lo sabía
+	Npc: Ah, veo que eres experto.
+
+=> END

@@ -42,7 +42,7 @@ func _ready() -> void:
 		nivel_permite_dash = false
 
 func _process(delta: float) -> void:
-	# --- 1. ESTADO DE HERIDO ---
+	# -- ESTADO DE HERIDO --
 	if herido:
 		if not is_on_floor():
 			velocity += get_gravity() * delta

@@ -210,7 +210,6 @@ shape = SubResource("WorldBoundaryShape2D_dywbp")
 [node name="NPC" parent="." instance=ExtResource("5_d5djh")]
 position = Vector2(672, 738)
 scale = Vector2(2, 2)
-collision_layer = 2
 collision_mask = 2
 
 [editable path="Player"]

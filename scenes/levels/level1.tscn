@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://2em6cj6agm5g"]
+[gd_scene load_steps=10 format=4 uid="uid://2em6cj6agm5g"]
 
 [ext_resource type="Texture2D" uid="uid://jaxgdho67rq4" path="res://assets/images/background/Blue.png" id="1_dd0lh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="1_x6ivy"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bvtq83vbrxx6f" path="res://scenes/snail.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dywbp"]
+[ext_resource type="PackedScene" uid="uid://gj3rlxdhqmwx" path="res://scenes/esencia.tscn" id="6_1seuy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
 texture = ExtResource("1_x6ivy")
@@ -174,7 +175,7 @@ sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1599.0
-offset_bottom = 900.0
+offset_bottom = 900.00006
 texture = ExtResource("1_dd0lh")
 stretch_mode = 1
 
@@ -218,5 +219,9 @@ es_mortal = true
 shape = SubResource("WorldBoundaryShape2D_dywbp")
 
 [node name="GameOver" type="CanvasLayer" parent="."]
+
+[node name="Esencia" parent="." instance=ExtResource("6_1seuy")]
+position = Vector2(352, 710)
+scale = Vector2(2, 2)
 
 [editable path="Player"]
