@@ -23,3 +23,6 @@ func _on_credits_pressed() -> void:
 
 func _on_story_pressed() -> void:
 	get_tree().change_scene_to_file("res://scripts/ui/intro.tscn")
+
+func _on_tutorial_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/tutorial.tscn")

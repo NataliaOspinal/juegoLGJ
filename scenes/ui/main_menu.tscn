@@ -193,6 +193,7 @@ mouse_filter = 2
 texture = ExtResource("6_uhagc")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="VBoxContainer/Story" to="." method="_on_story_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
