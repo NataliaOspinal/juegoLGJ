@@ -6,8 +6,7 @@ extends Control
 @onready var exit_btn: Button = $VBoxContainer/Exit
 
 func _ready() -> void:
-	MusicManager.duck_music(-12.0, 0.25)
-
+	MusicManager.stop_music()
 	MusicManager.play_stinger(preload("res://assets/sounds/music/music_dead.wav"), -2.0)
 	
 	overlay.modulate.a = 0.0
@@ -44,10 +43,12 @@ func _play_intro() -> void:
 	)
 
 func _on_retry_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
 	Global.vidas = 3
+	MusicManager.stop_stinger()
+	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
 
 func _on_exit_pressed() -> void:
+	MusicManager.stop_stinger()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 	
 func _process(delta: float) -> void:

@@ -10,6 +10,14 @@ extends Node
 var using_a := true
 var current_key := ""
 
+func stop_music() -> void:
+	a.stop()
+	b.stop()
+	current_key = ""
+
+func stop_stinger() -> void:
+	stinger.stop()
+
 func play_music(key: String, stream: AudioStream) -> void:
 	if key == current_key:
 		return
