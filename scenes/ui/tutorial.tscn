@@ -143,15 +143,16 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -217.5
-offset_top = 377.0
-offset_right = 218.5
-offset_bottom = 411.0
+offset_top = 363.0
+offset_right = 217.5
+offset_bottom = 435.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_4de72")
 theme_override_font_sizes/font_size = 20
-text = "Activa el cambio de máscara
+text = "Activa el cambio de máscara 
 Presiona: Q"
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Label4" type="Label" parent="CenterContainer/HBoxContainer/TextureRect"]

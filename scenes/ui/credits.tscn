@@ -39,16 +39,21 @@ bbcode_enabled = true
 text = "[center]
 [b][u]CRÉDITOS[/u][/b]
 
-[b][u]Producción[/u][/b]   
-Sofía Pimentel 
-Iván Aráoz 
+[b][u]Producción[/u][/b]  
+Sofía Pimentel  
+Iván Aráoz  
 
 [b][u]Diseño de Juego[/u][/b]  
 Sofía Pimentel  
 Natalia Ospinal  
 Andrea Ugarte  
-Pierina Espejo  
-Pedro Reyes  
+
+[b][u]Narrativa[/u][/b]  
+Sofía Pimentel  
+Andrea Ugarte  
+
+[b][u]Diseño de Personajes[/u][/b]  
+Sofía Pimentel  
 Omar Martínez  
 
 [b][u]Programación[/u][/b]  
@@ -61,32 +66,27 @@ Andrea Ugarte
 Pierina Espejo  
 Omar Martínez  
 
-[b][u]Ilustración[/u][/b]  
+[b][u]Ilustración de Introducción[/u][/b]  
 Paz Añorga  
 
 [b][u]Diseño de Interfaz (UI)[/u][/b]  
 Andrea Ugarte  
 Pierina Espejo  
 
-[b][u]Audio[/u][/b]  
+[b][u]Diseño de Logo[/u][/b]  
+Andrea Ugarte  
+
+[b][u]Audio y Diseño Sonoro[/u][/b]  
 Pedro Reyes  
 
-[b]Música Original:[/b]  
-Pedro Reyes  
-
-[b]Diseño de Sonido y Efectos de Sonido:[/b]  
-Pedro Reyes  
-
-[b][u]Herramientas Utilizadas[/u][/b]  
-[b]Motor de Juego:[/b] Godot Engine  
-[b]Lenguaje de Programación:[/b] GDScript  
-[b]Herramientas Gráficas:[/b]  
-- Krita  
-- Blender  
-[b]Edición de Audio:[/b] Audacity  
+[b][u]Agradecimientos[/u][/b]  
+A la LGJ  
+A TLS  
+Al staff  
+Y a todas las personas que apoyaron y acompañaron el desarrollo del proyecto.
 
 [b][u]Mensaje Final[/u][/b]  
-[i]Este proyecto fue desarrollado como una experiencia creativa y colaborativa.[/i]  
+[i]Este proyecto fue desarrollado como una experiencia creativa y colaborativa.[/i]
 
 [b]Gracias por jugar.[/b]
 [/center]"
