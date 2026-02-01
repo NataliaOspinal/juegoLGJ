@@ -22,9 +22,6 @@ func _on_any_button_hover() -> void:
 func _on_any_button_pressed() -> void:
 	sfx_click.play()
 
-func _process(delta: float) -> void:
-	pass
-
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 
