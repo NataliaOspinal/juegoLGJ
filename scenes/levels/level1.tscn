@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2em6cj6agm5g"]
+[gd_scene load_steps=10 format=4 uid="uid://2em6cj6agm5g"]
 
 [ext_resource type="Script" uid="uid://c83tfo8f1m7b6" path="res://scripts/level_1.gd" id="1_1seuy"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="1_x6ivy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="2_4tcl0"]
 [ext_resource type="PackedScene" uid="uid://bvtq83vbrxx6f" path="res://scenes/snail.tscn" id="4_bfxgj"]
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dywbp"]
+[ext_resource type="PackedScene" uid="uid://gj3rlxdhqmwx" path="res://scenes/esencia.tscn" id="6_1seuy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1seuy"]
 atlas = ExtResource("2_1seuy")
@@ -217,12 +218,11 @@ sources/0 = SubResource("TileSetAtlasSource_4tcl0")
 [node name="level1" type="Node2D"]
 script = ExtResource("1_1seuy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -11
-position = Vector2(73, 796)
-scale = Vector2(2, 2.008)
-sprite_frames = SubResource("SpriteFrames_nkeig")
-autoplay = "default"
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1599.0
+offset_bottom = 900.00006
+texture = ExtResource("1_dd0lh")
+stretch_mode = 1
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(33, 130)
@@ -265,5 +265,9 @@ es_mortal = true
 shape = SubResource("WorldBoundaryShape2D_dywbp")
 
 [node name="GameOver" type="CanvasLayer" parent="."]
+
+[node name="Esencia" parent="." instance=ExtResource("6_1seuy")]
+position = Vector2(352, 710)
+scale = Vector2(2, 2)
 
 [editable path="Player"]

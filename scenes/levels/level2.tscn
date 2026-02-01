@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dh7spa6yaetu6" path="res://assets/images/background/fondo plomo.png" id="2_d5djh"]
 [ext_resource type="Texture2D" uid="uid://bp73eb4eh13c" path="res://assets/images/tilemap/Terrain (16x16).png" id="2_nos0u"]
 [ext_resource type="PackedScene" uid="uid://tboxxupb5al0" path="res://scenes/player.tscn" id="3_71baw"]
+[ext_resource type="PackedScene" uid="uid://bcnpyjjvkg47p" path="res://scenes/NPC.tscn" id="5_d5djh"]
 [ext_resource type="PackedScene" uid="uid://bef1wyti0ynmm" path="res://scenes/killzone.tscn" id="5_dj4wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tcl0"]
@@ -207,5 +208,10 @@ es_mortal = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_dywbp")
+
+[node name="NPC" parent="." instance=ExtResource("5_d5djh")]
+position = Vector2(672, 738)
+scale = Vector2(2, 2)
+collision_mask = 2
 
 [editable path="Player"]
