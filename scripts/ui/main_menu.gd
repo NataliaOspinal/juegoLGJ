@@ -1,7 +1,9 @@
 extends Control
 
-@onready var sfx_hover: AudioStreamPlayer = $SFX_Hover
-@onready var sfx_click: AudioStreamPlayer = $SFX_Click
+# Referenciamos los nodos solo para "tomar prestado" su archivo de audio (.stream)
+# No llamaremos a .play() directamente en ellos.
+@onready var sfx_hover_node: AudioStreamPlayer = $SFX_Hover
+@onready var sfx_click_node: AudioStreamPlayer = $SFX_Click
 
 func _ready() -> void:
 	MusicManager.play_music(
@@ -16,11 +18,17 @@ func _ready() -> void:
 			btn.pressed.connect(_on_any_button_pressed)
 
 func _on_any_button_hover() -> void:
-	if not sfx_hover.playing:
-		sfx_hover.play()
+	# Verificamos si ya está sonando algo para no saturar (opcional)
+	# Le pasamos el archivo de audio (.stream) al Manager Global
+	if sfx_hover_node.stream:
+		SFXManager.play_sfx(sfx_hover_node.stream)
 
 func _on_any_button_pressed() -> void:
-	sfx_click.play()
+	# Le pasamos el sonido al Manager Global
+	# Así, aunque la escena cambie INMEDIATAMENTE abajo, el sonido sigue vivo en el Global
+	if sfx_click_node.stream:
+		SFXManager.play_sfx(sfx_click_node.stream)
+
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

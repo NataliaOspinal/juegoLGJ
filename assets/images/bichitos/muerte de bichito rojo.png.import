@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jc8ksfguwsf8"
-path="res://.godot/imported/Hit (38x24).png-fae1f780b5a246000876c6fdd1cf9d70.ctex"
+uid="uid://cw5g1n6x3dm32"
+path="res://.godot/imported/muerte de bichito rojo.png-0036e23c52f8604b0f592b3fcd00b286.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/Snails/Hit (38x24).png"
-dest_files=["res://.godot/imported/Hit (38x24).png-fae1f780b5a246000876c6fdd1cf9d70.ctex"]
+source_file="res://assets/images/bichitos/muerte de bichito rojo.png"
+dest_files=["res://.godot/imported/muerte de bichito rojo.png-0036e23c52f8604b0f592b3fcd00b286.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w25d0wao73ib"
-path="res://.godot/imported/Green.png-5e8277e6d1d23088db0cc45ecf6e893e.ctex"
+uid="uid://djtj7eilayq1u"
+path="res://.godot/imported/enemigo fantasma.png-be633e3b49b332f0ef5c7050c7ee09cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/background/Green.png"
-dest_files=["res://.godot/imported/Green.png-5e8277e6d1d23088db0cc45ecf6e893e.ctex"]
+source_file="res://assets/images/enemigos/enemigo fantasma.png"
+dest_files=["res://.godot/imported/enemigo fantasma.png-be633e3b49b332f0ef5c7050c7ee09cb.ctex"]
 
 [params]
 

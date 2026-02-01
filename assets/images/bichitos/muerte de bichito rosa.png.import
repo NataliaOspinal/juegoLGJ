@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbps05obqvd0q"
-path="res://.godot/imported/Gray.png-1d96b4c224dfa4b58b895851063303cb.ctex"
+uid="uid://cn4rqgc1s8u1k"
+path="res://.godot/imported/muerte de bichito rosa.png-de5ea7dff98e0de1fde6a3355d88aefe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/background/Gray.png"
-dest_files=["res://.godot/imported/Gray.png-1d96b4c224dfa4b58b895851063303cb.ctex"]
+source_file="res://assets/images/bichitos/muerte de bichito rosa.png"
+dest_files=["res://.godot/imported/muerte de bichito rosa.png-de5ea7dff98e0de1fde6a3355d88aefe.ctex"]
 
 [params]
 
