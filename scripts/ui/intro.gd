@@ -51,8 +51,9 @@ var slides := [
 ]
 
 var final_lines := [
-	"Esto es Stillmind.",
+	"Esto es Stillmind." ,
 	"Stillmind existe para las almas que murieron cargando máscaras.",
+	"En vida era experta en seguir instrucciones, en ponerse la máscara y sonreír. Tú eres diferente. Tú tienes el control ahora. No la dejes quieta. Muévela.",
 	"Bienvenida, Nuri."
 ]
 

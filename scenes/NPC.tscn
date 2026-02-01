@@ -240,12 +240,11 @@ script = ExtResource("1_mhefn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7pv12")
-<<<<<<< Updated upstream
 animation = &"idle_rosa"
 frame_progress = 0.12286538
-=======
 animation = &"muerte_azul"
->>>>>>> Stashed changes
+animation = &"idle_azul"
+frame_progress = 0.23223078
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 4)

@@ -143,11 +143,11 @@ func apply_dialogue_line() -> void:
 		match dialogue_line.character:
 			"Nuri":
 				fondo_visual.texture = SKIN_NURI
-			"Alma desapegada": # Nombre que usarás en el archivo .dialogue
-				fondo_visual.texture = SKIN_BICHO1
-			"Alma culpable": # Nombre que usarás en el archivo .dialogue
-				fondo_visual.texture = SKIN_BICHO2
 			"Alma temerosa": # Nombre que usarás en el archivo .dialogue
+				fondo_visual.texture = SKIN_BICHO1
+			"Alma desapegada": # Nombre que usarás en el archivo .dialogue
+				fondo_visual.texture = SKIN_BICHO2
+			"Alma culpable": # Nombre que usarás en el archivo .dialogue
 				fondo_visual.texture = SKIN_BICHO3
 			_:
 				# Imagen por defecto si el nombre no coincide con ninguno
