@@ -19,7 +19,7 @@ func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/level1.tscn")
 
 func _on_credits_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/ui/credits.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/credits_new.tscn")
 
 func _on_story_pressed() -> void:
 	get_tree().change_scene_to_file("res://scripts/ui/intro.tscn")
