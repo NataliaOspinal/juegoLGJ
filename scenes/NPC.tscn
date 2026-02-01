@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcnpyjjvkg47p"]
+[gd_scene load_steps=37 format=3 uid="uid://bcnpyjjvkg47p"]
 
 [ext_resource type="Script" uid="uid://bloh8exmd7kbp" path="res://scripts/npc.gd" id="1_mhefn"]
 [ext_resource type="Texture2D" uid="uid://b4o11pvs43c3o" path="res://assets/images/bichitos/idle_bichitoazul.png" id="2_6xvi5"]
 [ext_resource type="Texture2D" uid="uid://dj2ihg0ry2mbw" path="res://assets/images/bichitos/bichitorojo_idle.png" id="3_ktgr7"]
 [ext_resource type="Texture2D" uid="uid://c7o38mkl5c6m2" path="res://assets/images/bichitos/bichitorosa_idle.png" id="4_jnjht"]
+[ext_resource type="Texture2D" uid="uid://61rhiymhjhax" path="res://assets/images/bichitos/muerte de bichito azul.png" id="5_7pv12"]
+[ext_resource type="Texture2D" uid="uid://cw5g1n6x3dm32" path="res://assets/images/bichitos/muerte de bichito rojo.png" id="6_x6c3r"]
+[ext_resource type="Texture2D" uid="uid://cn4rqgc1s8u1k" path="res://assets/images/bichitos/muerte de bichito rosa.png" id="7_slm4e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ktgr7"]
 atlas = ExtResource("2_6xvi5")
@@ -28,6 +31,90 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_h6w2b"]
 atlas = ExtResource("4_jnjht")
 region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we7f3"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxikf"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnyoo"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t8s8"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmbj5"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jiysx"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwfh4"]
+atlas = ExtResource("5_7pv12")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cv6p"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ryoh"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn018"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7tade"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcgxe"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74kyn"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6gbn"]
+atlas = ExtResource("6_x6c3r")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjnhq"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76wvy"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjyn0"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvitp"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl1mi"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn46p"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8fuw"]
+atlas = ExtResource("7_slm4e")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7pv12"]
 animations = [{
@@ -63,6 +150,84 @@ animations = [{
 "loop": true,
 "name": &"idle_rosa",
 "speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we7f3")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_rxikf")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_bnyoo")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_5t8s8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gmbj5")
+}, {
+"duration": 1.51,
+"texture": SubResource("AtlasTexture_jiysx")
+}, {
+"duration": 2.01,
+"texture": SubResource("AtlasTexture_rwfh4")
+}],
+"loop": false,
+"name": &"muerte_azul",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cv6p")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_8ryoh")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_gn018")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_7tade")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcgxe")
+}, {
+"duration": 1.51,
+"texture": SubResource("AtlasTexture_74kyn")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_a6gbn")
+}],
+"loop": false,
+"name": &"muerte_rojo",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjnhq")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_76wvy")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_wjyn0")
+}, {
+"duration": 0.91,
+"texture": SubResource("AtlasTexture_cvitp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl1mi")
+}, {
+"duration": 1.51,
+"texture": SubResource("AtlasTexture_tn46p")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_p8fuw")
+}],
+"loop": false,
+"name": &"muerte_rosa",
+"speed": 8.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xvi5"]
@@ -75,6 +240,9 @@ script = ExtResource("1_mhefn")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7pv12")
+animation = &"idle_rosa"
+frame_progress = 0.12286538
+animation = &"muerte_azul"
 animation = &"idle_azul"
 frame_progress = 0.23223078
 

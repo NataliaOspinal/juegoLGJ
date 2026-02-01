@@ -11,4 +11,5 @@ Alma desapegada: [speed=0.5]...
 Alma desapegada:  [wait=0.6] Antes importaba. 
 Alma desapegada: Ahora ya no.
 Alma desapegada: Gracias :3
+do liberar_alma()
 => END

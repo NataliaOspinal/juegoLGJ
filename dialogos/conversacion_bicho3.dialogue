@@ -1,0 +1,14 @@
+~ start
+
+Alma culpable: Nuri… [shake rate=15 level=15]¡Yo debí haberlo hecho mejor![/shake]
+Alma culpable: [speed=0.6]Si fallé, [wait=0.5] es porque no hice suficiente.
+Nuri: No estabas solo.
+Alma culpable: [shake rate=15 level=15]¡Sí lo estaba![/shake]
+Alma culpable: [speed=0.2]...[/speed][speed=0.5]Siempre lo estuve. [speed=0.7]¿Acaso ves otras almas cerca?
+Alma culpable: [speed=0.5]Si yo no cargaba con todo… nadie lo hacía.
+Nuri: Cargar no es lo mismo que sostener.
+Alma culpable: [wait=0.4]Estoy cansada, Nuri…
+Nuri: [wait=0.3] [speed=0.6] Yo también lo estuve, pero ahora eres libre.
+Alma culpable: [speed=0.3] …Si, [speed=0.6] ya no debo esconderme tras esta máscara, ya no la necesito a donde voy.
+do liberar_alma()
+=> END

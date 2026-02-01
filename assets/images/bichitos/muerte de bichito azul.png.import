@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jaxgdho67rq4"
-path="res://.godot/imported/Blue.png-5b1baa1bc14f33c9799044758625a03a.ctex"
+uid="uid://61rhiymhjhax"
+path="res://.godot/imported/muerte de bichito azul.png-90fa555f8c409d88803ce2e7601cb7e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/background/Blue.png"
-dest_files=["res://.godot/imported/Blue.png-5b1baa1bc14f33c9799044758625a03a.ctex"]
+source_file="res://assets/images/bichitos/muerte de bichito azul.png"
+dest_files=["res://.godot/imported/muerte de bichito azul.png-90fa555f8c409d88803ce2e7601cb7e3.ctex"]
 
 [params]
 
