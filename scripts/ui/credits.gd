@@ -17,6 +17,21 @@ extends ScrollContainer
 
 @onready var margin: MarginContainer = $MarginContainer
 
+var _scroll_target: int = 0
+var _ended: bool = false
+var _vbar: VScrollBar
+
+func _process(_delta: float) -> void:
+	# Detecta el final usando el valor real del scrollbar.
+	# Esto evita desfasajes cuando scroll_vertical y max_value/page no coinciden 1:1.
+	if _ended:
+		set_process(false)
+		return
+	if _vbar == null:
+		return
+	if _scroll_target > 0 and _vbar.value >= float(_scroll_target) - 0.5:
+		_on_scroll_finished()
+
 func _ready() -> void:
 	# El texto final debe empezar oculto.
 	if is_instance_valid(rich_text_label):
@@ -31,7 +46,6 @@ func _ready() -> void:
 
 	# Esperamos a que el control ya esté en el árbol y con layout aplicado.
 	await get_tree().process_frame
-	# Fuerza un re-layout inmediato (más robusto que esperar frames “a ciegas”).
 	margin.queue_sort()
 	text_node.queue_redraw()
 	await get_tree().process_frame
@@ -43,32 +57,45 @@ func _ready() -> void:
 	margin.add_theme_constant_override("margin_top", m)
 	margin.add_theme_constant_override("margin_bottom", m)
 
-	# Un frame más para que el ScrollContainer recalcule el tamaño del contenido
-	# y el ScrollBar tenga un max_value correcto.
+	# Espera un frame más para recalcular scrollbars con el contenido final.
 	await get_tree().process_frame
 
 	# Aseguramos que seguimos en el inicio (abajo) antes de empezar a mover.
 	scroll_vertical = 0
 
-	# Destino real: el máximo scroll vertical posible.
-	var vbar := get_v_scroll_bar()
-	var scroll_amount: int = 0
-	if vbar:
-		scroll_amount = int(ceil(vbar.max_value))
+	# Cacheamos el scrollbar y calculamos un objetivo "visual" (sin cola invisible):
+	# max_value - page es el punto donde el final del contenido llega al borde inferior.
+	_vbar = get_v_scroll_bar()
+	_scroll_target = 0
+	if _vbar:
+		_scroll_target = int(ceil(maxf(0.0, _vbar.max_value - _vbar.page)))
 
 	# Duración basada en distancia real para una velocidad consistente.
 	var duration := credits_time
 	if scroll_speed > 0.0:
-		duration = float(scroll_amount) / scroll_speed
-	# Evita duraciones absurdas (muy cortas o muy largas) por edge-cases.
+		duration = float(_scroll_target) / scroll_speed
 	duration = clampf(duration, 2.0, 60.0)
+
+	_ended = false
+	set_process(true)
 
 	var tween := create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property(self, "scroll_vertical", scroll_amount, duration)
+	tween.set_trans(Tween.TRANS_LINEAR)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "scroll_vertical", _scroll_target, duration)
 	tween.finished.connect(_on_scroll_finished)
 
 func _on_scroll_finished() -> void:
+	if _ended:
+		return
+	_ended = true
+
+	# Fuerza el valor final para evitar quedarnos cerca pero sin gatillar.
+	scroll_vertical = _scroll_target
+	if _vbar:
+		_vbar.value = float(_scroll_target)
+
 	# Fade out del contenido scrolleable.
 	var fade_out := create_tween()
 	fade_out.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
