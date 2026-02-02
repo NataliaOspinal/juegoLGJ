@@ -1,4 +1,4 @@
-extends CharacterBody2D  # <--- CAMBIO IMPORTANTE: Ya no es Node2D
+extends CharacterBody2D  # 
 
 # Configuración
 @export var is_dangerous: bool = true
@@ -78,7 +78,7 @@ func voltear_sprites() -> void:
 func _on_area_empuje_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and body.has_method("apply_knockback"):
 		
-		# 1. Averiguamos si el jugador está a la derecha o izquierda del enemigo
+		# Averiguamos si el jugador está a la derecha o izquierda del enemigo
 		# sign() devuelve 1 si es positivo (derecha), -1 si es negativo (izquierda)
 		var direccion_x = sign(body.global_position.x - global_position.x)
 		
@@ -86,11 +86,13 @@ func _on_area_empuje_body_entered(body: Node2D) -> void:
 		if direccion_x == 0:
 			direccion_x = 1
 		
-		# 2. Creamos un vector MANUALMENTE.
+		
+		
+		# Creamos un vector MANUALMENTE.
 		# X = 1 o -1 (Puro lado)
 		# Y = -0.2 (Un saltito MUY pequeño solo para despegarlo del suelo y evitar fricción)
 		var vector_empuje = Vector2(direccion_x, -0.2).normalized()
 		
-		# 3. Aplicamos la fuerza
+		#Aplicamos la fuerza
 		# Como el vector es casi todo horizontal, la fuerza se irá a los lados.
 		body.apply_knockback(vector_empuje * push_force)

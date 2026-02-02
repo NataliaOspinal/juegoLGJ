@@ -69,7 +69,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e88or"]
@@ -97,7 +97,7 @@ position = Vector2(1.5, -2)
 scale = Vector2(0.921875, 0.90625)
 sprite_frames = SubResource("SpriteFrames_2mxae")
 autoplay = "default"
-frame_progress = 0.26828897
+frame_progress = 0.5360295
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-10, -1)
