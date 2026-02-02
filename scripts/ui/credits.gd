@@ -5,13 +5,24 @@ extends ScrollContainer
 @export_range(0.0, 100000, 0.1) var credits_time: float = 25.0
 @export_range(0, 100000, 0.1) var margin_increment: float = 0.0
 
+# Texto estático (fuera del ScrollContainer) que debe aparecer al final.
+@onready var rich_text_label: RichTextLabel = $"../RichTextLabel"
+
 # Nueva forma recomendada: velocidad de scroll en píxeles/segundo.
 # Si es > 0, el tiempo se calcula automáticamente en base a la distancia real.
 @export_range(0.0, 5000.0, 1.0) var scroll_speed: float = 120.0
 
+@export_range(0.0, 30.0, 0.1) var final_text_time: float = 4.0
+@export_range(0.0, 5.0, 0.05) var fade_time: float = 0.35
+
 @onready var margin: MarginContainer = $MarginContainer
 
 func _ready() -> void:
+	# El texto final debe empezar oculto.
+	if is_instance_valid(rich_text_label):
+		rich_text_label.visible = false
+		rich_text_label.modulate.a = 0.0
+
 	# Arrancamos desde abajo para evitar que se vea el texto en su posición "natural"
 	# durante 1-2 frames mientras calculamos tamaños.
 	scroll_vertical = 0
@@ -55,7 +66,35 @@ func _ready() -> void:
 	var tween := create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(self, "scroll_vertical", scroll_amount, duration)
-	tween.finished.connect(_is_credits_over)
+	tween.finished.connect(_on_scroll_finished)
+
+func _on_scroll_finished() -> void:
+	# Fade out del contenido scrolleable.
+	var fade_out := create_tween()
+	fade_out.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	fade_out.tween_property(text_node, "modulate:a", 0.0, fade_time)
+	fade_out.finished.connect(_show_final_text)
+
+func _show_final_text() -> void:
+	# Oculta el contenido que se desplaza.
+	margin.visible = false
+
+	# Si no existe el label final, terminamos.
+	if not is_instance_valid(rich_text_label):
+		_is_credits_over()
+		return
+
+	rich_text_label.visible = true
+
+	var t := create_tween()
+	t.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	# Fade in
+	t.tween_property(rich_text_label, "modulate:a", 1.0, fade_time)
+	# Espera
+	t.tween_interval(final_text_time)
+	# Fade out
+	t.tween_property(rich_text_label, "modulate:a", 0.0, fade_time)
+	t.finished.connect(_is_credits_over)
 
 func _is_credits_over() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
