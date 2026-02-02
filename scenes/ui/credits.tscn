@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqfvk0725utb7"]
+[gd_scene format=3 uid="uid://bqfvk0725utb7"]
 
 [ext_resource type="Script" uid="uid://rx4m110u72yq" path="res://scripts/ui/credits.gd" id="1_oap8i"]
 [ext_resource type="FontFile" uid="uid://ta24fjexhgva" path="res://assets/fonts/alagard.ttf" id="2_jkvjv"]
@@ -6,7 +6,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcfse"]
 bg_color = Color(0, 0, 0, 0)
 
-[node name="Credits" type="ScrollContainer" node_paths=PackedStringArray("text_node")]
+[node name="Credits" type="ScrollContainer" unique_id=56575047 node_paths=PackedStringArray("text_node")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -18,13 +18,14 @@ vertical_scroll_mode = 3
 script = ExtResource("1_oap8i")
 text_node = NodePath("MarginContainer/RichTextLabel")
 credits_time = 15.0
+scroll_speed = 80.0
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1037787827]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=934655573]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("2_jkvjv")
 theme_override_fonts/bold_font = ExtResource("2_jkvjv")
